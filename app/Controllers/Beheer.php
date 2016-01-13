@@ -46,12 +46,33 @@ class Beheer extends Controller
     public function beheer()
     {
         $data['title'] = $this->language->get('Beheer');
+<<<<<<< HEAD
+
+        $result = $this->getData('klanten', 2);
+        $i = 1;
+        foreach ($result as $key) {
+            $data["users"] .= '
+                <tr>
+                    <td>'.$i.'</td>
+                    <td>'.$key->voornaam.'</td>
+                    <td>'.$key->tussenvoegsel.'</td>
+                    <td>'.$key->achternaam.'</td>
+                    <td>'.$key->email.'</td>
+                    <td style="text-align: right">
+                        <a href="#" data-id="'.$key->klant_id.'" class="EditRow"><i class="fa fa-pencil-square-o fa-lg"></i></a>&nbsp;
+                        <a href="#" data-id="'.$key->klant_id.'" class="DeleteRow"><i class="fa fa-times fa-lg"></i></a>
+                    </td>
+                </tr>
+            ';
+            $i++;
+=======
         $rechten = \Helpers\Session::get('rechten') - 1;
         $result = $this->getData('klanten', $rechten);
         $data["users"] = '<table class="table table-hover"><button id="toevoegen" class="btn btn-primary">toevoegen</button><thead><tr><th>Voornaam</th><th>Tussenvoegsel</th><th>Achternaam</th><th>E-mail</th><th></th></tr></thead><tbody>';
         foreach ($result as $key) 
         {
             $data["users"] .= "<tr><td>".$key->voornaam."</td><td>".$key->tussenvoegsel."</td><td>".$key->achternaam."</td><td>".$key->email."</td><td><button name='wijzigen' id='".$key->klant_id."' class='fa fa-pencil-square-o btn btn-link' type='submit'></button><button name='verwijderen' id='".$key->klant_id."' class='fa fa-times btn btn-link'></button></td></tr>";
+>>>>>>> f11ba226bdfd609b6ce9bb60801c3cd554bf1453
         }
         $data["users"] .= '</tbody></table>';
 
