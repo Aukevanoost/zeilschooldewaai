@@ -166,10 +166,7 @@ use Core\Language;
                 <h2>Kleding</h2>
             </div>
             Het is verstandig goede zeilkleding mee te nemen. Omdat dit nogal duur kan zijn adviseren wij voor de beginners een goed regenpak. Voor de gevorderde zeiler is echte zeilkleding aan te raden. In (en ook  buiten) de provincie Friesland zijn talloze winkels waar men u kunt adviseren. Google even op "zeilkleding" gevolgd door uw woonplaats.
-            <br><br>
-            Op deze pagina vindt u ook de cursussen die deze maand worden gegeven. Voor de rest van de cursussen gedurende dit jaar dient u zich te registreren als klant.
-
-
+            <br>
 
         </div>
     </div>
