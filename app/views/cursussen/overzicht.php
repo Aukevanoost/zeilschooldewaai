@@ -105,6 +105,7 @@
         onderwezen hoe je deze begrippen tijdens het zeilen gaat toepassen. Tijdens het praktijkdeel
         van deze cursus leer je het geleerde toe te passen.
         <br /><br/>
+        <i>Deze cursus duurt 1 week van zondag tot zaterdag</i>
     </div>
     <div class="col-md-5">
         <br /><br /><br />
@@ -126,6 +127,9 @@
         boten dan de BM-ers. Je leert hier met een spinaker te zeilen en, bij sterke
         wind, te zeilen met een trapeze. Je leert hier ook wat te doen indien een
         noodsituatie ontstaat (zoals man overboord, een klap met een giek en een stukje EHBO).
+        <br /><br />
+        <i>Deze cursus duurt 1 week van zondag tot zaterdag</i>
+
     </div>
     <div class="col-md-5">
         <br /><br /><br />
@@ -151,6 +155,9 @@
         <br />
         Dit zijn boten met platte bodems, zodat de boten bij laag tij op de zeebodem kunnen blijven
         liggen, zonder dat het schip kantelt. Een unieke ervaring voor de gevorderde zeiler!
+        <br /><br />
+        <i>Deze cursus duurt 1 week van zondag tot zaterdag</i>
+
     </div>
     <div class="col-md-5">
         <br /><br /><br />
