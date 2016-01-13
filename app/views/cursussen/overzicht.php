@@ -1,6 +1,5 @@
 <br />
-<!-- Navigatie
------------------------------------------------------------------------------ -->
+<!-- Navigatie -->
 <ul class="nav nav-tabs TabNavigation" role="tablist">
     <li role="presentation" class="active"><a href="#agenda" class="ContentBtn" data-content="Agenda"  role="tab" data-toggle="tab">Deze maand</a></li>
     <li role="presentation"><a href="#Soorten" role="tab"  class="ContentBtn" data-content="beginners"  data-toggle="tab">Beginners cursus</a></li>
