@@ -8,7 +8,6 @@ if (\Helpers\Session::get('rechten')==3)
 	?>
     <div class="page-header">
         <h1 style="text-align: center">Beheer</h1>
-<<<<<<< HEAD
     </div>
         <table class="table table-hover">
             <button id="BeheerderToevoegen" class="btn btn-primary">Toevoegen</button>
@@ -18,7 +17,7 @@ if (\Helpers\Session::get('rechten')==3)
                     <th width="100px">Voornaam</th>
                     <th width="70px"></th>
                     <th>Achternaam</th>
-                    <th>E-mail</th>    
+                    <th>E-mail</th>
                     <th></th>
                 </tr>
             </thead>
@@ -51,12 +50,8 @@ if (\Helpers\Session::get('rechten')==3)
                 </div>
             </form>
         </div>
-    <?php
-=======
-    </div> 
- <?php
-    echo $data["users"];
->>>>>>> f11ba226bdfd609b6ce9bb60801c3cd554bf1453
+    </div>
+<?php
 }
 elseif(\Helpers\Session::get('rechten')==2)
 {
@@ -75,7 +70,8 @@ elseif(\Helpers\Session::get('rechten')==2)
         <li role="presentation"><a href="#CursistKoppelen" role="tab"  onclick="ChangeContent('CursistKoppelen')" data-toggle="tab">Cursist Koppelen</a></li>
     </ul>
 <br />
-<?php echo $data["users"]; }
+<?php echo $data["users"];
+ }
 else
 {
 	echo "geen rechten";
