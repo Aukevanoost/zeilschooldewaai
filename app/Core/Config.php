@@ -73,7 +73,7 @@ class Config
         define('DB_USER', 'root');
 
         /**
-         * Database password.
+         * Database password.       FNaOlMtzlu
          */
         define('DB_PASS', '');
 

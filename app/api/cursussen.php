@@ -11,7 +11,6 @@
     ================================================================================== */
 
     if($_GET['action'] == '1'){
-
         if(isset($_POST['voorwaarden'])){
             $password = sha1($_POST['password']);
             $klant = $_POST['user_id'];

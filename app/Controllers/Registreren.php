@@ -1,13 +1,4 @@
 <?php
-/**
- * Welcome controller
- *
- * @author David Carr - dave@daveismyname.com
- * @version 2.2
- * @date June 27, 2014
- * @date updated Sept 19, 2015
- */
-
 namespace Controllers;
 
 use Core\View;
@@ -47,6 +38,7 @@ class Registreren extends Controller
         $check = $this->registreren->validateUser($slug);
         if(count($check) == 1){
             //Als er een gebruiker gelinkt is word het account geactiveerd.
+            \Helpers\Session::destroy('checkmail');
             $this->registreren->givePrivilage($check[0]->klant_id);
         }
         //Linkt je naar de succes pagina.
@@ -126,6 +118,14 @@ class Registreren extends Controller
                             $data["melding"] = '<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Er is een fout opgetreden.</strong><br>Uw wachtwoord moet minimaal 8 karakters hebben.</div>';                            
                         }
 
+                        //Stuurt een email met een unieke url naar de gebruiker.
+                        $url = $this->sendValidateMail($email);
+                        //Zet een session voor een melding dat de email gechecked moet worden.
+                        \Helpers\Session::set('checkmail', 'check uw email');
+                        //Ze de gegevens van de klant in de database.
+                        $this->registreren->insertUsers($geslacht,$voorletters, $voornaam, $tussenvoegsel, $achternaam, $adres, $postcode, $woonplaats, $telefoonnummer, $mobiel, $email, $niveau, $geboortedatum, $wachtwoord, $url);
+                        //Je word doorgestuurd naar de login pagina.
+                        \Helpers\Url::redirect('login');
                     }
                     else
                     {

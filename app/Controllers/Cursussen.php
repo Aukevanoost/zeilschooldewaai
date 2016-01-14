@@ -101,7 +101,6 @@ Zeilteam de Waai.
         $mail->body($body);
         $mail->Send();
 
-
         View::render('cursussen/validatie', $data);
         View::renderTemplate('footer', $data);
 

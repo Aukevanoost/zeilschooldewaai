@@ -76,8 +76,8 @@ class Profiel extends Controller
             if(!empty($_POST['wachtwoord']) && !empty($_POST['wachtwoord1']))
             { 
 
-                $wachtwoord = $_POST['wachtwoord'];
-                $wachtwoord1 = $_POST['wachtwoord1'];
+                $wachtwoord = sha1($_POST['wachtwoord']);
+                $wachtwoord1 = sha1($_POST['wachtwoord1']);
 
                 if($wachtwoord == $wachtwoord1){
                     if(strlen($wachtwoord >= 8)){

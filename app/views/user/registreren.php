@@ -92,7 +92,7 @@ $hooks = Hooks::get();
                 </div>
                 <div class="col-md-12">
                     <label for="message">Captcha <small>(Tegen bots)</small>:</label>
-                    <div class="g-recaptcha" id="captcha" name="form_captcha" data-sitekey="6LdEohQTAAAAAJTVjYk_L35j7aQ_ctXuv0qCPEzj"></div>
+                    <div class="g-recaptcha" id="captcha" name="form_captcha" data-sitekey="6LfSPRUTAAAAANh5P3tIRbtwvyQLQbBbhHMQaMrb"></div>
                 </div>
                 <div class="col-md-12">
                     <br />

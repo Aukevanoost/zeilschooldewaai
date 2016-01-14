@@ -16,6 +16,7 @@ $hooks = Hooks::get();
 
 	<!-- Site meta -->
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
 	//hook for plugging in meta tags
 	$hooks->run('meta');
@@ -61,13 +62,32 @@ $hooks->run('afterBody');
 </div>
 <div id="navbar">
 	<div class="container">
-		<div class="Left">
-			<a href="home"><div class="NavItem <?php if($data['title'] == 'Home'){echo 'active';} ?>">Home</div></a>
-			<a href="overons"><div class="NavItem <?php if($data['title'] == 'Over ons'){echo 'active';} ?>">Over ons</div></a>
-			<a href="boten"><div class="NavItem <?php if($data['title'] == 'Boten'){echo 'active';} ?>">Boten</div></a>
-			<a href="cursussen"><div class="NavItem <?php if($data['title'] == 'Cursussen'){echo 'active';} ?>">Cursussen</div></a>
-			<a href="contact"><div class="NavItem <?php if($data['title'] == 'Contact'){echo 'active';} ?>">Contact</div></a>
+            <!-- beheerder menu -->
+<?php
+	   if (\Helpers\Session::get('rechten')==2 ) { ?>
+        <div class="Left">
+			<a href="beheerklanten"><div class="NavItem <?php if($data['title'] == 'beheerklanten'){echo 'active';} ?>">Beheerklanten</div></a>
+			<a href="beheerboten"><div class="NavItem <?php if($data['title'] == 'beheerboten'){echo 'active';} ?>">Beheerboten</div></a>
+			<a href="beheerCursussen"><div class="NavItem <?php if($data['title'] == 'beheerCursussen'){echo 'active';} ?>">Beheercursussen</div></a>
+			<a href="beheerinstructeurs"><div class="NavItem <?php if($data['title'] == 'BeheerInstructeurs'){echo 'active';} ?>">BeheerInstructeurs</div></a>
+			<a href="cursistkoppelen"><div class="NavItem <?php if($data['title'] == 'CursistKoppelen'){echo 'active';} ?>">CursistKoppelen</div></a>
 		</div>
+            <!-- Admin menu -->
+              <?php } elseif (\Helpers\Session::get('rechten')==3 ) { ?>
+         <div class="Left">
+              <a href="beheer"><div class="NavItem <?php if($data['title'] == 'Beheer'){echo 'active';} ?>">Beheer</div></a>            
+        </div>
+        
+			<!-- Normale menu items.-->
+      <?php } else { ?>
+         <div class="Left">
+              <a href="home"><div class="NavItem <?php if($data['title'] == 'Home'){echo 'active';} ?>">Home</div></a>
+              <a href="overons"><div class="NavItem <?php if($data['title'] == 'Over ons'){echo 'active';} ?>">Over ons</div></a>
+              <a href="boten"><div class="NavItem <?php if($data['title'] == 'Boten'){echo 'active';} ?>">Boten</div></a>
+              <a href="cursussen"><div class="NavItem <?php if($data['title'] == 'Cursussen'){echo 'active';} ?>">Cursussen</div></a>
+              <a href="contact"><div class="NavItem <?php if($data['title'] == 'Contact'){echo 'active';} ?>">Contact</div></a>
+        </div>
+    <?php } ?>  
 		<div class="Right">
             
             
@@ -85,7 +105,7 @@ $hooks->run('afterBody');
 				else
 				{
 			?>
-			<a href="beheer"><div class="NavItem <?php if($data['title'] == 'Beheer'){echo 'active';} ?>"><i class="fa fa-lock"></i> Beheer</div></a>
+
 			<?php
 				}
 		}
@@ -112,5 +132,16 @@ $hooks->run('afterBody');
 		<a href="registreren"><div class="ResponsiveItem">Registreren</div></a>
 
 	</div>
+    
+    	<div class="responsiveMenu">
+		<a href="beheerklanten"><div class="ResponsiveItem">beheerklanten</div></a>
+		<a href="beheerboten"><div class="ResponsiveItem">beheerboten</div></a>
+		<a href="beheercursussen"><div class="ResponsiveItem">Boten</div></a>
+		<a href="beheerinstructeurs"><div class="ResponsiveItem">Cursussen</div></a>
+		<a href="cursistkoppelen"><div class="ResponsiveItem">contact</div></a>
+		<a href="login"><div class="ResponsiveItem">Inloggen</div></a>
+		<a href="registreren"><div class="ResponsiveItem">Registreren</div></a>
+
+	   </div>
 </div>
 <div class="container page">

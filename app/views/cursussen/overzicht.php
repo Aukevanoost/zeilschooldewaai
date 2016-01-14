@@ -1,6 +1,5 @@
 <br />
-<!-- Navigatie
------------------------------------------------------------------------------ -->
+<!-- Navigatie -->
 <ul class="nav nav-tabs TabNavigation" role="tablist">
     <li role="presentation" class="active"><a href="#agenda" class="ContentBtn" data-content="Agenda"  role="tab" data-toggle="tab">Deze maand</a></li>
     <li role="presentation"><a href="#Soorten" role="tab"  class="ContentBtn" data-content="beginners"  data-toggle="tab">Beginners cursus</a></li>
@@ -29,8 +28,7 @@
         $datum = str_replace("September", "september", $datum); 
         $datum = str_replace("October", "oktober", $datum); 
         $datum = str_replace("November", "november", $datum); 
-        $datum = str_replace("December", "december", $datum); 
-
+        $datum = str_replace("December", "december", $datum);
         return $datum; 
     }
 ?>
@@ -41,14 +39,12 @@
         <h1 style="text-align: center;">Alle cursussen in de maand <?= nlDate(date('F'));?></h1>
         <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Wilt u zich inschrijven?</strong><br>Bij het tabje inschrijven kunt u alle cursussen zien en daar zich voor inschrijven mits u ingelogd bent</div>
     </div>
-
         <?php
             $i = 0;
             foreach($data['CoursesOverzicht'] as $key => $value){
                 $i++;
                 $startdatum = nlDate(date("d F", strtotime($value->startdatum)));
                 $einddatum = nlDate(date("d F", strtotime($value->einddatum)));
-
                 ?>
                     <div class="AgendaItem">
                         <?php
@@ -106,6 +102,7 @@
         onderwezen hoe je deze begrippen tijdens het zeilen gaat toepassen. Tijdens het praktijkdeel
         van deze cursus leer je het geleerde toe te passen.
         <br /><br/>
+        <i>Deze cursus duurt 1 week van zondag tot zaterdag</i>
     </div>
     <div class="col-md-5">
         <br /><br /><br />
@@ -127,6 +124,9 @@
         boten dan de BM-ers. Je leert hier met een spinaker te zeilen en, bij sterke
         wind, te zeilen met een trapeze. Je leert hier ook wat te doen indien een
         noodsituatie ontstaat (zoals man overboord, een klap met een giek en een stukje EHBO).
+        <br /><br />
+        <i>Deze cursus duurt 1 week van zondag tot zaterdag</i>
+
     </div>
     <div class="col-md-5">
         <br /><br /><br />
@@ -152,6 +152,9 @@
         <br />
         Dit zijn boten met platte bodems, zodat de boten bij laag tij op de zeebodem kunnen blijven
         liggen, zonder dat het schip kantelt. Een unieke ervaring voor de gevorderde zeiler!
+        <br /><br />
+        <i>Deze cursus duurt 1 week van zondag tot zaterdag</i>
+
     </div>
     <div class="col-md-5">
         <br /><br /><br />
@@ -163,10 +166,9 @@
 </div>
 
 <!--  Inschrijvingen -->
-
 <form onsubmit="SubmitForm()" method="post" id="CursusForm" action="">
     <input type="hidden" name="user_id" id="user_id" value="<?php echo \Helpers\Session::get('id'); ?>" />
-    <!-- Stap 1 -->
+    <!-- =====| Stap 1 |===== -->
     <div id="stap1_inschrijven" class="Subject" style="display: none">
         <div class="page-header">
             <h1><?php if(\Helpers\Session::get('id')){ echo '1. Keuze'; }else{ echo 'Geen toegang.';} ?></h1>
@@ -221,7 +223,7 @@
 
         <?php } ?>
     </div>
-    <!-- Stap 2 -->
+    <!-- ========| Stap 2 |======== -->
 
     <div id="stap2_inschrijven" class="Subject" style="display: none">
         <div class="page-header">
@@ -255,7 +257,7 @@
         <br />
 
     </div>
-    <!-- Stap 3 -->
+    <!-- ========| Stap 3 |======== -->
 
     <div id="stap3_inschrijven" class="Subject" style="display: none">
         <div class="page-header">
