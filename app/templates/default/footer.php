@@ -18,7 +18,7 @@ $hooks = Hooks::get();
 		
 		<div class="top-footer">
 			<div class="container">
-				<span class="title"><i class="fa fa-pencil"></i> Heeft u zich al ingeschreven voor een cursus? <a href="cursussen"><button class="button">Schrijf je nu in!</button></a></span>
+				<span class="title"><i class="fa fa-pencil"></i> Heeft u zich al ingeschreven op een cursus? <a href="cursussen"><button class="button">Bekijk de cursussen &raquo;</button></a></span>
 			</div>
 		</div>
 		<div class="container">

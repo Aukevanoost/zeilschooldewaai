@@ -39,7 +39,7 @@
 <div id="Agenda" class="Subject">
     <div class="page-header">
         <h1 style="text-align: center;">Alle cursussen in de maand <?= nlDate(date('F'));?></h1>
-        <p style="text-align: center;">Bij het tabje inschrijven kunt u alle cursussen zien en daar zich voor inschrijven mits u ingelogd bent.</p>
+        <div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Wilt u zich inschrijven?</strong><br>Bij het tabje inschrijven kunt u alle cursussen zien en daar zich voor inschrijven mits u ingelogd bent</div>
     </div>
 
         <?php

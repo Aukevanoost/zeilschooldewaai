@@ -19,6 +19,9 @@
 
 #Logo{
     height: 120px;
+    max-width:100%;
+    display: block;
+    width:auto;
     margin: 35px 0px;
 }
 
@@ -44,7 +47,11 @@
     width: 100%;
     position: absolute;
     top: 200px;
-    z-index: 99999999999999;
+    z-index: 999;
+}
+
+.modal{
+    z-index:9999;
 }
 
 .Left{

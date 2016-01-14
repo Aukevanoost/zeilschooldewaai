@@ -16,8 +16,9 @@ $hooks = Hooks::get();
             color:red;
             font-weight:bold;
             font-size:20px;
-            position: absolute;
+            position: relative;
             top: -5px;
+            
         }
     </style>
  

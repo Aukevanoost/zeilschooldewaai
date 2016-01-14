@@ -22,7 +22,7 @@ class Profiel extends Controller
 
     public function removeBadCharacters($s)
     {
-       return str_replace(array('&','<','>','/','\\','"',"'",'?'," "), '', $s);
+       return str_replace(array('&','<','>','/','\\','"',"'",'?'), '', $s);
     }
 
     public function index()
@@ -30,11 +30,17 @@ class Profiel extends Controller
 
         $data['title'] = "Profiel";
         $id = \Helpers\Session::get('id');
+
+        if($_POST['deleteCursus']){
+            echo $_POST['deleteCursus'];
+            echo "<br>";
+            echo $id;
+        }
         
 
         if ($_POST['submit-gegevens'])
         {   
-            if(!empty($_POST['geslacht']) && !empty($_POST['voorletters']) && !empty($_POST['voornaam']) && !empty($_POST['achternaam']) && !empty($_POST['adres']) && !empty($_POST['postcode']) && !empty($_POST['woonplaats']) && !empty($_POST['email']) && !empty($_POST['geboortedatum']) && !empty($_POST['niveau']))
+            if(!empty($_POST['geslacht']) && !empty($_POST['voorletters']) && !empty($_POST['voornaam']) && !empty($_POST['achternaam']) && !empty($_POST['adres']) && !empty($_POST['postcode']) && !empty($_POST['woonplaats']) && !empty($_POST['geboortedatum']) && !empty($_POST['niveau']))
             { 
 
                 $geslacht = $_POST['geslacht'];
@@ -46,16 +52,14 @@ class Profiel extends Controller
                 $postcode = $this->removeBadCharacters($_POST['postcode']);
                 $woonplaats = $this->removeBadCharacters($_POST['woonplaats']);
                 $telefoonnummer = $this->removeBadCharacters($_POST['telefoonnummer']);
-                $mobiel = $this->removeBadCharacters($_POST['mobiel']);
-                $email = $this->removeBadCharacters($_POST['email']);       
+                $mobiel = $this->removeBadCharacters($_POST['mobiel']);    
                 $geboortedatum = $_POST['geboortedatum'];
                 $niveau = $_POST['niveau'];
 
                 //regex van de postcode.
                 $regex = '~\A[1-9]\d{3} ?[a-zA-Z]{2}\z~';
                 if (preg_match($regex, $postcode)) {
-                    $this->profiel->updateUser($id, $geslacht,$voorletters, $voornaam, $tussenvoegsel, $achternaam, $adres, $postcode, $woonplaats, $telefoonnummer, $mobiel, $email, $geboortedatum, $niveau);
-                    //\Helpers\Url::redirect('profiel');
+                    $this->profiel->updateUser($id, $geslacht,$voorletters, $voornaam, $tussenvoegsel, $achternaam, $adres, $postcode, $woonplaats, $telefoonnummer, $mobiel, $geboortedatum, $niveau);
                     $data["melding"] = '<div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gelukt!</strong><br>Uw gegevens zijn succesvol aangepast.</div>';
                 }
                 else
@@ -76,9 +80,15 @@ class Profiel extends Controller
                 $wachtwoord1 = $_POST['wachtwoord1'];
 
                 if($wachtwoord == $wachtwoord1){
-                    $wachtwoord = sha1($wachtwoord);
-                    $this->profiel->updateUserPassword($id, $wachtwoord);
-                    $data["melding"] = '<div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gelukt!</strong><br>Uw wachtwoord is succesvol aangepast.</div>';
+                    if(strlen($wachtwoord >= 8)){
+                        $wachtwoord = sha1($wachtwoord);
+                        $this->profiel->updateUserPassword($id, $wachtwoord);
+                        $data["melding"] = '<div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gelukt!</strong><br>Uw wachtwoord is succesvol aangepast.</div>';
+                    }else{
+                        //Een error melding dat het wachtwoord niet lang genoeg is.
+                        $data["melding"] = '<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Er is een fout opgetreden.</strong><br>Uw wachtwoord moet minimaal 8 karakters hebben.</div>';                            
+                    }
+
                 }else{
                     $data["melding"] = '<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Er is een fout opgetreden.</strong><br>De twee wachtwoorden moeten hetzelfde zijn.</div>';
                 }
@@ -87,7 +97,8 @@ class Profiel extends Controller
             }
         }       
 
-        $data['klant'] = $this->profiel->getUser($id); 
+        $data['klant'] = $this->profiel->getUser($id);
+        $data['cursussen'] = $this->profiel->getInschrijvingen($id);
           
         View::renderTemplate('header', $data);
         View::render('user/profiel', $data);

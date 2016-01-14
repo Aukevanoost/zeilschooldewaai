@@ -97,31 +97,48 @@ class Registreren extends Controller
                 $wachtwoord = sha1($_POST["password"]);
                 $wachtwoord1 = sha1($_POST["password1"]);
                 
-                //Kijkt of de wachtwoorden overeen komen.
-                if($wachtwoord == $wachtwoord1)
-                {
-                    //Er word gekeken of de email al bestaad in de database.
-                    $check = $this->registreren->checkEmail($email);
-                    if (count($check) == 0) 
+
+                //regex van de postcode.
+                $regex = '~\A[1-9]\d{3} ?[a-zA-Z]{2}\z~';
+                if (preg_match($regex, $postcode)) {
+                    //Kijkt of de wachtwoorden overeen komen.
+                    if($wachtwoord == $wachtwoord1)
                     {
-                        //Stuurt een email met een unieke url naar de gebruiker.
-                        $url = $this->sendValidateMail($email);
-                        //Ze de gegevens van de klant in de database.
-                        $this->registreren->insertUsers($geslacht,$voorletters, $voornaam, $tussenvoegsel, $achternaam, $adres, $postcode, $woonplaats, $telefoonnummer, $mobiel, $email, $niveau, $geboortedatum, $wachtwoord, $url);
-                        //Je word doorgestuurd naar de login pagina.
-                        \Helpers\Url::redirect('login');
+                        if(strlen($wachtwoord >= 8)){
+                            //Er word gekeken of de email al bestaad in de database.
+                            $check = $this->registreren->checkEmail($email);
+                            if (count($check) == 0) 
+                            {
+                                //Stuurt een email met een unieke url naar de gebruiker.
+                                $url = $this->sendValidateMail($email);
+                                //Ze de gegevens van de klant in de database.
+                                $this->registreren->insertUsers($geslacht,$voorletters, $voornaam, $tussenvoegsel, $achternaam, $adres, $postcode, $woonplaats, $telefoonnummer, $mobiel, $email, $niveau, $geboortedatum, $wachtwoord, $url);
+                                //Je word doorgestuurd naar de login pagina.
+                                \Helpers\Url::redirect('login');
+                            }
+                            else
+                            {
+                                //Een error melding als de email al bestaad in de database.
+                                $data["melding"] = '<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Er is een fout opgetreden.</strong><br>Uw email is al geregeristreerd.</div>';
+                            }
+                        }else{
+                            //Een error melding dat het wachtwoord niet lang genoeg is.
+                            $data["melding"] = '<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Er is een fout opgetreden.</strong><br>Uw wachtwoord moet minimaal 8 karakters hebben.</div>';                            
+                        }
+
                     }
                     else
                     {
-                        //Een error melding als de email al bestaad in de database.
-                        $data["melding"] = '<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Er is een fout opgetreden.</strong><br>Uw email is al geregeristreerd.</div>';
+                        //Een error melding als de ingevulde wachtwoorden niet overeen komen.
+                        $data["melding"] = '<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Er is een fout opgetreden.</strong><br>De wachtwoorden zijn niet hetzelfde.</div>';
                     }
                 }
                 else
                 {
-                    //Een error melding als de ingevulde wachtwoorden niet overeen komen.
-                    $data["melding"] = '<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Er is een fout opgetreden.</strong><br>De wachtwoorden zijn niet hetzelfde.</div>';
+                    // Een error melding dat de postcode onjuist is.
+                    $data["melding"] = '<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Er is een fout opgetreden.</strong><br>De postcode is onjuist</div>';
                 }
+
             }
             else
             {
