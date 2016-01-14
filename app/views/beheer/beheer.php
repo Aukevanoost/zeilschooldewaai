@@ -70,9 +70,20 @@ elseif(\Helpers\Session::get('rechten')==2)
         <li role="presentation"><a href="#CursistKoppelen" role="tab"  onclick="ChangeContent('CursistKoppelen')" data-toggle="tab">Cursist Koppelen</a></li>
     </ul>
 <br />
-<?php echo $data["users"];
- }
-else
-{
-	echo "geen rechten";
-}
+<!-- Beheer Profiel -->
+<div id="BeheerProfiel" class="Subject">
+    
+<!-- Beheer Klanten -->
+<div id="BeheerKlanten" class="Subject">
+    
+<!-- Beheer Boten -->
+<div id="BeheerBoten" class="Subject">
+    
+<!-- Beheer Cursussen -->
+<div id="BeheerCursussen" class="Subject">
+    
+<!-- Beheer Instructeurs -->
+<div id="BeheerInstructeurs" class="Subject">
+    
+<!-- Cursist Koppelen -->
+<div id="CursistKoppelen" class="Subject">
