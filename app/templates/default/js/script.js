@@ -244,7 +244,8 @@ $('#AdminForm').submit(function (e) {
     $.post( "/zeilschooldewaai/app/api/beheer.php?action=" + action, $('form').serialize())
         .done(function( data ) {
             console.log(data);
-            location.reload();
+            // location.reload();
     });
 });
 
+/* Instructeurs */

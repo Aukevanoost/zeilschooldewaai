@@ -34,6 +34,7 @@ Router::any('loguit', 'Controllers\Login@loguit');
 
 /* beheer sectie */
 Router::any('beheer', 'Controllers\Beheer@beheer');
+Router::any('beheer/instructeur', 'Controllers\Beheer@instructeur');
 
 /** Module routes. */
 $hooks = Hooks::get();
