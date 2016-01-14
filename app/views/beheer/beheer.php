@@ -93,20 +93,3 @@ else
 	echo "geen rechten";
 }
 ?>
-<!-- Beheer Profiel -->
-<div id="BeheerProfiel" class="Subject">
-    
-<!-- Beheer Klanten -->
-<div id="BeheerKlanten" class="Subject">
-    
-<!-- Beheer Boten -->
-<div id="BeheerBoten" class="Subject">
-    
-<!-- Beheer Cursussen -->
-<div id="BeheerCursussen" class="Subject">
-    
-<!-- Beheer Instructeurs -->
-<div id="BeheerInstructeurs" class="Subject">
-    
-<!-- Cursist Koppelen -->
-<div id="CursistKoppelen" class="Subject">
