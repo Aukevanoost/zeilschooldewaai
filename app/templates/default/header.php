@@ -98,7 +98,7 @@ $hooks->run('afterBody');
 				else
 				{
 			?>
-			<a href="beheer"><div class="NavItem <?php if($data['title'] == 'Beheer'){echo 'active';} ?>"><i class="fa fa-lock"></i> Beheer</div></a>
+
 			<?php
 				}
 		}
