@@ -47,7 +47,8 @@ class Beheer extends Controller
     {
         $data['title'] = $this->language->get('Beheer');
 
-        $result = $this->getData('klanten', 2);
+        $rechten = \Helpers\Session::get('rechten') - 1;
+        $result = $this->getData('klanten', $rechten);
         $i = 1;
         foreach ($result as $key) {
             $data["users"] .= '
@@ -65,16 +66,7 @@ class Beheer extends Controller
             ';
             $i++;
         }
-        /*
-        $rechten = \Helpers\Session::get('rechten') - 1;
-        $result = $this->getData('klanten', $rechten);
-        $data["users"] = '<table class="table table-hover"><button id="toevoegen" class="btn btn-primary">toevoegen</button><thead><tr><th>Voornaam</th><th>Tussenvoegsel</th><th>Achternaam</th><th>E-mail</th><th></th></tr></thead><tbody>';
-        foreach ($result as $key) 
-        {
-            $data["users"] .= "<tr><td>".$key->voornaam."</td><td>".$key->tussenvoegsel."</td><td>".$key->achternaam."</td><td>".$key->email."</td><td><button name='wijzigen' id='".$key->klant_id."' class='fa fa-pencil-square-o btn btn-link' type='submit'></button><button name='verwijderen' id='".$key->klant_id."' class='fa fa-times btn btn-link'></button></td></tr>";
-        }
-        $data["users"] .= '</tbody></table>';
-        */
+        
         View::renderTemplate('header', $data);
         View::render('beheer/beheer', $data);
         View::renderTemplate('footer', $data);

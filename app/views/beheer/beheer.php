@@ -70,8 +70,24 @@ elseif(\Helpers\Session::get('rechten')==2)
         <li role="presentation"><a href="#CursistKoppelen" role="tab"  onclick="ChangeContent('CursistKoppelen')" data-toggle="tab">Cursist Koppelen</a></li>
     </ul>
 <br />
+<table class="table table-hover">
+            <button id="BeheerderToevoegen" class="btn btn-primary">Toevoegen</button>
+            <thead>
+                <tr>
+                    <th width="40px">#</th>
+                    <th width="100px">Voornaam</th>
+                    <th width="70px"></th>
+                    <th>Achternaam</th>
+                    <th>E-mail</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
 <?php echo $data["users"];
- }
+ 
+ ?></tbody>
+        </table>
+<?php } 
 else
 {
 	echo "geen rechten";
