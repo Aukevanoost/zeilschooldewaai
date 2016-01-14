@@ -28,8 +28,7 @@
         $datum = str_replace("September", "september", $datum); 
         $datum = str_replace("October", "oktober", $datum); 
         $datum = str_replace("November", "november", $datum); 
-        $datum = str_replace("December", "december", $datum); 
-
+        $datum = str_replace("December", "december", $datum);
         return $datum; 
     }
 ?>
@@ -40,14 +39,12 @@
         <h1 style="text-align: center;">Alle cursussen in de maand <?= nlDate(date('F'));?></h1>
         <p style="text-align: center;">Bij het tabje inschrijven kunt u alle cursussen zien en daar zich voor inschrijven mits u ingelogd bent.</p>
     </div>
-
         <?php
             $i = 0;
             foreach($data['CoursesOverzicht'] as $key => $value){
                 $i++;
                 $startdatum = nlDate(date("d F", strtotime($value->startdatum)));
                 $einddatum = nlDate(date("d F", strtotime($value->einddatum)));
-
                 ?>
                     <div class="AgendaItem">
                         <?php
@@ -169,10 +166,9 @@
 </div>
 
 <!--  Inschrijvingen -->
-
 <form onsubmit="SubmitForm()" method="post" id="CursusForm" action="">
     <input type="hidden" name="user_id" id="user_id" value="<?php echo \Helpers\Session::get('id'); ?>" />
-    <!-- Stap 1 -->
+    <!-- =====| Stap 1 |===== -->
     <div id="stap1_inschrijven" class="Subject" style="display: none">
         <div class="page-header">
             <h1><?php if(\Helpers\Session::get('id')){ echo '1. Keuze'; }else{ echo 'Geen toegang.';} ?></h1>
@@ -227,7 +223,7 @@
 
         <?php } ?>
     </div>
-    <!-- Stap 2 -->
+    <!-- ========| Stap 2 |======== -->
 
     <div id="stap2_inschrijven" class="Subject" style="display: none">
         <div class="page-header">
@@ -261,7 +257,7 @@
         <br />
 
     </div>
-    <!-- Stap 3 -->
+    <!-- ========| Stap 3 |======== -->
 
     <div id="stap3_inschrijven" class="Subject" style="display: none">
         <div class="page-header">
