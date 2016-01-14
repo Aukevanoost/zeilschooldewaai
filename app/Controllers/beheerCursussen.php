@@ -1,5 +1,6 @@
 <?php
 namespace Controllers;
+
 use Core\View;
 use Core\Controller;
 use Core\Config;
@@ -16,19 +17,24 @@ class beheerCursussen extends Controller
 
     public function getCursussen()
     {
-        $result = $this->dbBeheer->getAllCourses();
+        $result = $this->dbCursussen->getAllCourses();
+        $ret = "<table class='table table-hover'><thead><tr><th>cursusnaam</th></th><th>cursusprijs</th><th>cursusomschrijving</th><th>startdatum</th><th>einddatum</th><th></th><th></th></tr></thead>";
+        foreach ($result as $key) {
+            $ret .= "<tr><td>".$key->cursusnaam."</td><td>".$key->cursusprijs."</td><td>".$key->cursusomschrijving."</td><td>".$key->startdatum."</td><td>".$key->einddatum."</td><td>A</td><td>R</td></tr>";
+        }
+        $ret .= "</table>";
 
-        return $result;
+        return $ret;
     }
 
     public function index()
     {
         $data['title'] = $this->language->get('beheerCursussen');
 
-        $data['cursussen'] = $this->dbCursussen->getCursussen();
+        $data['cursussen'] = $this->getCursussen();
 
         View::renderTemplate('header', $data);
-        View::render('boten/overzicht', $data);
+        View::render('beheer/beheercursussen', $data);
         View::renderTemplate('footer', $data);
     }
 }
