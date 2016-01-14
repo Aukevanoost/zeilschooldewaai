@@ -16,6 +16,7 @@ $hooks = Hooks::get();
 
 	<!-- Site meta -->
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
 	//hook for plugging in meta tags
 	$hooks->run('meta');
