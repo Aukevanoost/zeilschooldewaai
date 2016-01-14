@@ -66,9 +66,9 @@ $hooks->run('afterBody');
 <?php
 	   if (\Helpers\Session::get('rechten')==2 ) { ?>
         <div class="Left">
-			<a href="beheerklanten"><div class="NavItem <?php if($data['title'] == 'Beheerklanten'){echo 'active';} ?>">Beheerklanten</div></a>
-			<a href="beheerboten"><div class="NavItem <?php if($data['title'] == 'Beheerboten'){echo 'active';} ?>">Beheerboten</div></a>
-			<a href="beheercursussen"><div class="NavItem <?php if($data['title'] == 'Beheercursussen'){echo 'active';} ?>">Beheercursussen</div></a>
+			<a href="beheerklanten"><div class="NavItem <?php if($data['title'] == 'beheerklanten'){echo 'active';} ?>">Beheerklanten</div></a>
+			<a href="beheerboten"><div class="NavItem <?php if($data['title'] == 'beheerboten'){echo 'active';} ?>">Beheerboten</div></a>
+			<a href="beheerCursussen"><div class="NavItem <?php if($data['title'] == 'beheerCursussen'){echo 'active';} ?>">Beheercursussen</div></a>
 			<a href="beheerinstructeurs"><div class="NavItem <?php if($data['title'] == 'BeheerInstructeurs'){echo 'active';} ?>">BeheerInstructeurs</div></a>
 			<a href="cursistkoppelen"><div class="NavItem <?php if($data['title'] == 'CursistKoppelen'){echo 'active';} ?>">CursistKoppelen</div></a>
 		</div>
