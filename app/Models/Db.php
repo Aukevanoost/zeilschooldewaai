@@ -104,7 +104,8 @@
 		}
 
 		public function getInschrijvingen($id){
-			$result = $this->db->select("SELECT * FROM cursussen INNER JOIN inschrijvingen ON cursussen.cursus_id = inschrijvingen.cursus_id WHERE inschrijvingen.klant_id = $id; ORDER BY cursussen.startdatum");
+			$result = $this->db->select("SELECT * FROM cursussen INNER JOIN inschrijvingen ON cursussen.cursus_id = inschrijvingen.cursus_id WHERE inschrijvingen.klant_id = $id ORDER BY cursussen.startdatum ASC");
 			return $result;
 		}
+
 	}

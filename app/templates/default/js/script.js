@@ -13,6 +13,15 @@ jQuery("document").ready(function($) {
     });
 });
 
+
+/* Profiel deleteCursus button in modal
+ ================================================================================== */
+$( ".deleteCursus" ).on( "click", function() {
+    var cursusID = $(this).data('id');
+    $("#cursus_id").val(cursusID);
+});
+
+
 /* Bootstrap slideshow
  ================================================================================== */
 $('.carousel').carousel({
