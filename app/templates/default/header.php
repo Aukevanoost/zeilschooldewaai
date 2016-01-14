@@ -62,13 +62,25 @@ $hooks->run('afterBody');
 </div>
 <div id="navbar">
 	<div class="container">
-		<div class="Left">
-			<a href="home"><div class="NavItem <?php if($data['title'] == 'Home'){echo 'active';} ?>">Home</div></a>
-			<a href="overons"><div class="NavItem <?php if($data['title'] == 'Over ons'){echo 'active';} ?>">Over ons</div></a>
-			<a href="boten"><div class="NavItem <?php if($data['title'] == 'Boten'){echo 'active';} ?>">Boten</div></a>
-			<a href="cursussen"><div class="NavItem <?php if($data['title'] == 'Cursussen'){echo 'active';} ?>">Cursussen</div></a>
-			<a href="contact"><div class="NavItem <?php if($data['title'] == 'Contact'){echo 'active';} ?>">Contact</div></a>
+<?php
+	   if (\Helpers\Session::get('rechten')==2 || \Helpers\Session::get('rechten')==3 ) { ?>
+        <div class="Left">
+			<a href="beheerklanten"><div class="NavItem <?php if($data['title'] == 'Beheerklanten'){echo 'active';} ?>">Beheerklanten</div></a>
+			<a href="beheerboten"><div class="NavItem <?php if($data['title'] == 'Beheerboten'){echo 'active';} ?>">Beheerboten</div></a>
+			<a href="beheercursussen"><div class="NavItem <?php if($data['title'] == 'Beheercursussen'){echo 'active';} ?>">Beheercursussen</div></a>
+			<a href="beheerInstructeurs"><div class="NavItem <?php if($data['title'] == 'BeheerInstructeurs'){echo 'active';} ?>">BeheerInstructeurs</div></a>
+			<a href="cursistKoppelen"><div class="NavItem <?php if($data['title'] == 'CursistKoppelen'){echo 'active';} ?>">CursistKoppelen</div></a>
 		</div>
+		
+      <?php } else { ?>
+         <div class="Left">
+              <a href="home"><div class="NavItem <?php if($data['title'] == 'Home'){echo 'active';} ?>">Home</div></a>
+              <a href="overons"><div class="NavItem <?php if($data['title'] == 'Over ons'){echo 'active';} ?>">Over ons</div></a>
+              <a href="boten"><div class="NavItem <?php if($data['title'] == 'Boten'){echo 'active';} ?>">Boten</div></a>
+              <a href="cursussen"><div class="NavItem <?php if($data['title'] == 'Cursussen'){echo 'active';} ?>">Cursussen</div></a>
+              <a href="contact"><div class="NavItem <?php if($data['title'] == 'Contact'){echo 'active';} ?>">Contact</div></a>
+        </div>
+    <?php } ?>  
 		<div class="Right">
             
             
