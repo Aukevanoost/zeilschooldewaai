@@ -1,3 +1,18 @@
+.required{
+    color:red;
+    font-weight:bold;
+    font-size:20px;
+    position: relative;
+    top: -5px;
+    
+}
+
+.deleteCursus{
+	outline: 0;
+	background:none;
+	border:0;
+}
+
 .button{
 	padding-left:15px;
 	padding-right:15px;

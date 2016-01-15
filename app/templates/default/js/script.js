@@ -13,6 +13,15 @@ jQuery("document").ready(function($) {
     });
 });
 
+
+/* Profiel deleteCursus button in modal
+ ================================================================================== */
+$( ".deleteCursus" ).on( "click", function() {
+    var cursusID = $(this).data('id');
+    $("#cursus_id").val(cursusID);
+});
+
+
 /* Bootstrap slideshow
  ================================================================================== */
 $('.carousel').carousel({
@@ -244,9 +253,10 @@ $('#AdminForm').submit(function (e) {
     $.post( "/zeilschooldewaai/app/api/beheer.php?action=" + action, $('form').serialize())
         .done(function( data ) {
             console.log(data);
-            location.reload();
+            // location.reload();
     });
 });
+
 
 /* Beheer Klanten
 ================================================================================== */
@@ -337,6 +347,9 @@ $('#BeheerForm').submit(function (e) {
     $.post( "/zeilschooldewaai/app/api/klanten.php?action=" + action, $('form').serialize())
         .done(function( data ) {
             console.log(data);
-            //location.reload();
+            location.reload();
     });
 });
+
+/* Instructeurs */
+

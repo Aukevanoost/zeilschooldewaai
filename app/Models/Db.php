@@ -63,9 +63,9 @@
 			return $result;			
 		}
 
-		public function updateUser($id, $geslacht, $voorletters, $voornaam, $tussenvoegsel, $achternaam, $adres, $postcode, $woonplaats, $telefoonnummer, $mobiel, $email, $geboortedatum, $niveau)
+		public function updateUser($id, $geslacht, $voorletters, $voornaam, $tussenvoegsel, $achternaam, $adres, $postcode, $woonplaats, $telefoonnummer, $mobiel, $geboortedatum, $niveau)
 		{
-			$this->db->raw("UPDATE klanten SET geslacht='$geslacht', voorletters='$voorletters', voornaam='$voornaam', tussenvoegsel='$tussenvoegsel', achternaam='$achternaam', adres='$adres', postcode='$postcode', woonplaats='$woonplaats', telefoonnummer='$telefoonnummer', mobiel='$mobiel', email='$email', geboortedatum='$geboortedatum', niveau='$niveau' WHERE klant_id='$id';");		
+			$this->db->raw("UPDATE klanten SET geslacht='$geslacht', voorletters='$voorletters', voornaam='$voornaam', tussenvoegsel='$tussenvoegsel', achternaam='$achternaam', adres='$adres', postcode='$postcode', woonplaats='$woonplaats', telefoonnummer='$telefoonnummer', mobiel='$mobiel', geboortedatum='$geboortedatum', niveau='$niveau' WHERE klant_id='$id';");		
 		}
 
 		public function updateUserPassword($id, $wachtwoord)
@@ -102,4 +102,10 @@
 		{
 			$result = $this->db->delete($tabel, $where);
 		}
+
+		public function getInschrijvingen($id){
+			$result = $this->db->select("SELECT * FROM cursussen INNER JOIN inschrijvingen ON cursussen.cursus_id = inschrijvingen.cursus_id WHERE inschrijvingen.klant_id = $id ORDER BY cursussen.startdatum ASC");
+			return $result;
+		}
+
 	}
