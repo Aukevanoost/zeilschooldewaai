@@ -62,23 +62,16 @@ $hooks->run('afterBody');
 </div>
 <div id="navbar">
 	<div class="container">
-            <!-- beheerder menu -->
 <?php
-	   if (\Helpers\Session::get('rechten')==2 ) { ?>
+	   if (\Helpers\Session::get('rechten')==2 || \Helpers\Session::get('rechten')==3 ) { ?>
         <div class="Left">
 			<a href="beheerklanten"><div class="NavItem <?php if($data['title'] == 'Beheerklanten'){echo 'active';} ?>">Beheerklanten</div></a>
 			<a href="beheerboten"><div class="NavItem <?php if($data['title'] == 'Beheerboten'){echo 'active';} ?>">Beheerboten</div></a>
 			<a href="beheercursussen"><div class="NavItem <?php if($data['title'] == 'Beheercursussen'){echo 'active';} ?>">Beheercursussen</div></a>
-			<a href="beheerinstructeurs"><div class="NavItem <?php if($data['title'] == 'BeheerInstructeurs'){echo 'active';} ?>">BeheerInstructeurs</div></a>
-			<a href="cursistkoppelen"><div class="NavItem <?php if($data['title'] == 'CursistKoppelen'){echo 'active';} ?>">CursistKoppelen</div></a>
+			<a href="/beheer/instructeur"><div class="NavItem <?php if($data['title'] == 'Instructeurbeheer'){echo 'active';} ?>">BeheerInstructeurs</div></a>
+			<a href="cursistKoppelen"><div class="NavItem <?php if($data['title'] == 'CursistKoppelen'){echo 'active';} ?>">CursistKoppelen</div></a>
 		</div>
-            <!-- Admin menu -->
-              <?php } elseif (\Helpers\Session::get('rechten')==3 ) { ?>
-         <div class="Left">
-              <a href="beheer"><div class="NavItem <?php if($data['title'] == 'Beheer'){echo 'active';} ?>">Beheer</div></a>            
-        </div>
-        
-			<!-- Normale menu items.-->
+		
       <?php } else { ?>
          <div class="Left">
               <a href="home"><div class="NavItem <?php if($data['title'] == 'Home'){echo 'active';} ?>">Home</div></a>
@@ -132,16 +125,5 @@ $hooks->run('afterBody');
 		<a href="registreren"><div class="ResponsiveItem">Registreren</div></a>
 
 	</div>
-    
-    	<div class="responsiveMenu">
-		<a href="beheerklanten"><div class="ResponsiveItem">beheerklanten</div></a>
-		<a href="beheerboten"><div class="ResponsiveItem">beheerboten</div></a>
-		<a href="beheercursussen"><div class="ResponsiveItem">Boten</div></a>
-		<a href="beheerinstructeurs"><div class="ResponsiveItem">Cursussen</div></a>
-		<a href="cursistkoppelen"><div class="ResponsiveItem">contact</div></a>
-		<a href="login"><div class="ResponsiveItem">Inloggen</div></a>
-		<a href="registreren"><div class="ResponsiveItem">Registreren</div></a>
-
-	   </div>
 </div>
 <div class="container page">

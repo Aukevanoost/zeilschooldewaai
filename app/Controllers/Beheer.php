@@ -71,4 +71,13 @@ class Beheer extends Controller
         View::render('beheer/beheer', $data);
         View::renderTemplate('footer', $data);
     }
+
+    public function instructeur(){
+        $data['title'] = $this->language->get('Instructeurbeheer');
+
+
+        View::renderTemplate('header', $data);
+        View::render('beheer/instructeur', $data);
+        View::renderTemplate('footer', $data);
+    }
 }
