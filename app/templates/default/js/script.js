@@ -248,3 +248,95 @@ $('#AdminForm').submit(function (e) {
     });
 });
 
+/* Beheer Klanten
+================================================================================== */
+$("#KlantenToevoegen").click(function(){
+
+    // gegevens verzamelen
+    var items = [ "geslacht", "voorletters", "voornaam", "tussenvoegsel", "achternaam", "adres", "postcode", "woonplaats", "telefoonnummer", "mobiel", "email", "geboortedatum", "niveau", "wachtwoord"];
+    var body = '';
+
+    // loop door de gegevens die ingevoerd moeten worden
+    for (var i = 0; i < items.length; i++) {
+        body += '<tr><th>' + items[i] + '</th><td><input type="text" name="' + items[i] + '" class="form-control" placeholder="Voer ' + items[i] + ' in.." required/></td></tr>';
+    }
+
+    // onderdelen in de modal zetten
+    $("#BeheerModalHeader").html('Klanten toevoegen');
+    $("#BeheerModalBody").html(body);
+    $('#SaveBtn').attr('data-action','1');
+
+    // modal laten zien
+    $('#BeheerModal').modal('show');
+    
+});
+
+/* beheerder wijzigen */
+$(".EditRow").click(function() {
+
+    // id ophalen
+    var id = $(this).attr('data-id');
+
+    //gegevens ophalen
+    $.ajax({
+        method: "POST",
+        url: "/zeilschooldewaai/app/api/klanten.php?action=2",
+        data: {
+            user_id: id
+        },
+        success: function( data ) {
+
+            // data verzamelen
+            data = JSON.parse(data);
+            data = data[0];
+
+            // input velden genereren
+            body = '<tr><th>Id:</th><td><input type="hidden" name="klant_id" value="' + id + '" />' + id + '</td></tr>';
+            $.each(data, function(key, value){
+                body += '<tr><th>' + key + ':</th><td><input type="text" name="' + key + '" value="' + value + '" class="form-control" placeholder="Voer ' + key + ' in.."/></td></tr>';
+            });
+            body += '<tr><th>wachtwoord:</th><td><input type="text" name="wachtwoord" class="form-control" placeholder="Voer nieuw wachtwoord in.." /></td></tr>';
+
+            // modal vullen met gegevens
+            $("#BeheerModalHeader").html('Klanten wijzigen');
+            $("#BeheerModalBody").html(body);
+            $('#SaveBtn').attr('data-action','3');
+
+            // modal laten zien
+            $('#BeheerModal').modal('show');
+        }
+    });
+});
+
+/* Gebruiker verwijderen */
+$(".DeleteRow").click(function(){
+    var klant_id = $(this).attr('data-id');
+
+    body = '<input type="hidden" name="klant_id" value="' + klant_id + '" /> Weet u zeker dat u deze klant wil verwijderen?';
+
+    $("#BeheerModalHeader").html('Klanten verwijderen');
+    $("#BeheerModalBody").html(body);
+    $('#SaveBtn').attr('data-action','4');
+    $('#SaveBtn').html('Verwijder gebruiker');
+    $('#SaveBtn').attr('class','btn btn-danger');
+
+    // modal laten zien
+    $('#BeheerModal').modal('show');
+});
+
+
+/* Formulier Submitten */
+$('#BeheerForm').submit(function (e) {
+    // zorgt ervoor dat het formulier niet submit
+    e.preventDefault();
+
+    // type CRUD defineren
+    var action = $('#SaveBtn').attr('data-action');
+
+    // send dem data to validation
+    $.post( "/zeilschooldewaai/app/api/klanten.php?action=" + action, $('form').serialize())
+        .done(function( data ) {
+            console.log(data);
+            //location.reload();
+    });
+});
