@@ -17,10 +17,17 @@ class beheerCursussen extends Controller
 
     public function getCursussen()
     {
-        $result = $this->dbCursussen->getAllCourses();
-        $ret = "<table class='table table-hover'><thead><tr><th>cursusnaam</th></th><th>cursusprijs</th><th>cursusomschrijving</th><th>startdatum</th><th>einddatum</th><th></th><th></th></tr></thead>";
+        $sql = "SELECT cursusnaam, cursusprijs, cursusomschrijving, startdatum, einddatum FROM `cursussen`";
+        $result = $this->dbCursussen->getAllData($sql);
+        $array = get_object_vars($result[0]);
+        $thead = "";
+        foreach ($array as $key => $value) {
+            $thead .= "<th>$key</th>";
+        }
+        $ret = "<table class='table table-hover'><button id='beheerCursussen' class='btn btn-primary'>Toevoegen</button>";
+        $ret .= "<thead><tr>".$thead."</tr></thead>";
         foreach ($result as $key) {
-            $ret .= "<tr><td>".$key->cursusnaam."</td><td>".$key->cursusprijs."</td><td>".$key->cursusomschrijving."</td><td>".$key->startdatum."</td><td>".$key->einddatum."</td><td>A</td><td>R</td></tr>";
+            $ret .= "<tr><td>".$key->cursusnaam."</td><td>".$key->cursusprijs."</td><td>".$key->cursusomschrijving."</td><td>".$key->startdatum."</td><td>".$key->einddatum."</td><td><i class='fa fa-pencil'></i></td><td><i class='fa fa-times'></i></td></tr>";
         }
         $ret .= "</table>";
 

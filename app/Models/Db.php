@@ -103,9 +103,17 @@
 			$result = $this->db->delete($tabel, $where);
 		}
 
-		public function getInschrijvingen($id){
-			$result = $this->db->select("SELECT * FROM cursussen INNER JOIN inschrijvingen ON cursussen.cursus_id = inschrijvingen.cursus_id WHERE inschrijvingen.klant_id = $id ORDER BY cursussen.startdatum ASC");
+		public function getAllData($sql)
+		{
+			$result = $this->db->select($sql);
+
 			return $result;
 		}
 
+		public function getInschrijvingen($id)
+		{
+			$result = $this->db->select("SELECT * FROM cursussen INNER JOIN inschrijvingen ON cursussen.cursus_id = inschrijvingen.cursus_id WHERE inschrijvingen.klant_id = $id ORDER BY cursussen.startdatum ASC");
+			
+			return $result;
+		}
 	}

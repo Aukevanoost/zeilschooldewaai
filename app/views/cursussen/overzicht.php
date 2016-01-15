@@ -214,8 +214,6 @@
                             ';
                         }
                     ?>
-
-
                 </tbody>
             </table>
         <?php } else{ ?>
@@ -252,7 +250,7 @@
             <label id="voorwaardenLabel" for="voorwaarden" style="font-weight: normal;">Ik ga  akkoord met de voorwaarden.</label><br />
             <input type="submit" class="btn btn-primary" id="VerstuurKnop" name="Verstuur" value="Inschrijven"/>
         </div>
-        <div class="spacer" style="clear: both;"></div>
+        <div class="spacer" style="clear: both"></div>
         <br />
         <br />
 
