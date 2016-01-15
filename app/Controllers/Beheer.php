@@ -75,6 +75,25 @@ class Beheer extends Controller
     public function instructeur(){
         $data['title'] = $this->language->get('Instructeurbeheer');
 
+        $result = $this->dbBeheer->userData('Instructeurs');
+        $i = 1;
+        foreach ($result as $key) {
+            $data["instructeurs"] .= '
+                <tr>
+                    <td>' . $i . '</td>
+                    <td>' . $key->instructeur_voornaam . '</td>
+                    <td>' . $key->instructeur_voorletters . '</td>
+                    <td>' . $key->instructeur_tussenvoegsels. '</td>
+                    <td>' . $key->instructeur_achternaam . '</td>
+                    <td>' . $key->instructeur_geslacht . '</td>
+                    <td style="text-align: right">
+                        <a href="#" data-id="'.$key->instructeur_id.'" class="EditInstructeur"><i class="fa fa-pencil fa-lg"></i></a>&nbsp;
+                        <a href="#" data-id="'.$key->instructeur_id.'" class="DeleteInstructeur"><i class="fa fa-times fa-lg"></i></a>
+                    </td>
+                </tr>
+            ';
+            $i++;
+        }
 
         View::renderTemplate('header', $data);
         View::render('beheer/instructeur', $data);

@@ -189,7 +189,6 @@ $("#BeheerderToevoegen").click(function(){
 
 /* beheerder wijzigen */
 $(".EditRow").click(function() {
-
     // id ophalen
     var id = $(this).attr('data-id');
 
@@ -257,4 +256,103 @@ $('#AdminForm').submit(function (e) {
     });
 });
 
-/* Instructeurs */
+/* Instructeurs
+ ================================================================================== */
+ /* beheerders toevoegen */
+$("#InstructeurToevoegen").click(function(){
+
+    // gegevens verzamelen
+    var items = [ "voorletters", "voornaam","tussenvoegsel","achternaam"];
+    var body = '';
+
+    // geslacht shizzle
+    body += '<tr><th>geslacht: </th><td><select name="geslacht" class="form-control" title="Voer geslacht in.."><option value="man">man</option><option value="vrouw">vrouw</option></select></td></tr>';
+
+    // loop door de gegevens die ingevoerd moeten worden
+    for (var i = 0; i < items.length; i++) {
+        body += '<tr><th>' + items[i] + '</th><td><input type="text" name="' + items[i] + '" class="form-control" placeholder="Voer ' + items[i] + ' in.." required/></td></tr>';
+    }
+
+    // onderdelen in de modal zetten
+    $("#InstructeurModalHeader").html('Instructeur toevoegen');
+    $("#InstructeurModalBody").html(body);
+    $('#SaveBtn').attr('data-action','1');
+
+    // modal laten zien
+    $('#InstructeurModal').modal('show');
+});
+
+/* instructeur wijzigen */
+$(".EditInstructeur").click(function() {
+    // id ophalen
+    var id = $(this).attr('data-id');
+
+    //gegevens ophalen
+    $.ajax({
+        method: "POST",
+        url: "/zeilschooldewaai/app/api/instructeurs.php?action=2",
+        data: {
+            instructeur_id: id
+        },
+        success: function( data ) {
+            console.log('Progression');
+            // data verzamelen
+            data = JSON.parse(data);
+            data = data[0];
+
+            // input velden genereren
+            //body = '';
+            body = '<input type="hidden" name="id" value="' + id + '" />';
+            $.each(data, function(key, value){
+                if(key == 'instructeur_geslacht'){
+                    if(value == 'man'){
+                        body += '<tr><th style="text-transform:capitalize;">' + key.replace("instructeur_", "") + ':</th><td><select name="' + key.replace("instructeur_", "") + '" class="form-control" title="Voer ' + key.replace("instructeur_", "") + ' in.."><option value="man" selected>man</option><option value="vrouw" >vrouw</option></select></td></tr>';
+                    }else{
+                        body += '<tr><th style="text-transform:capitalize;">' + key.replace("instructeur_", "") + ':</th><td><select name="' + key.replace("instructeur_", "") + '" class="form-control" title="Voer ' + key.replace("instructeur_", "") + ' in.."><option value="man" >man</option><option value="vrouw" selected>vrouw</option></select></td></tr>';
+                    }
+                }else{
+                    body += '<tr><th style="text-transform:capitalize;">' + key.replace("instructeur_", "") + ':</th><td><input type="text" name="' + key.replace("instructeur_", "") + '" value="' + value + '" class="form-control" placeholder="Voer ' + key.replace("instructeur_", "") + ' in.."/></td></tr>';
+                }
+            });
+
+            // modal vullen met gegevens
+            $("#InstructeurModalHeader").html('Beheerder wijzigen');
+            $("#InstructeurModalBody").html(body);
+            $('#SaveBtn').attr('data-action','3');
+
+            // modal laten zien*/
+            $('#InstructeurModal').modal('show');
+        }
+    });
+});
+
+/* Gebruiker verwijderen */
+$(".DeleteInstructeur").click(function(){
+    var instructeur_id = $(this).attr('data-id');
+    body = '<input type="hidden" name="instructeur_id" value="' + instructeur_id + '" /> Weet u zeker dat u deze instructeur wil verwijderen?';
+
+    $("#InstructeurModalHeader").html('Instructeur verwijderen');
+    $("#InstructeurModalBody").html(body);
+    $('#SaveBtn').attr('data-action','4');
+    $('#SaveBtn').html('Verwijder instructeur');
+    $('#SaveBtn').attr('class','btn btn-danger');
+
+    // modal laten zien
+    $('#InstructeurModal').modal('show');
+});
+/* Formulier Submitten */
+$('#InstructeurForm').submit(function (e) {
+    // zorgt ervoor dat het formulier niet submit
+    e.preventDefault();
+
+    // type CRUD defineren
+    var action = $('#SaveBtn').attr('data-action');
+
+    // send dem data to validation
+    $.post( "/zeilschooldewaai/app/api/instructeurs.php?action=" + action, $('form').serialize())
+        .done(function( data ) {
+            console.log(data);
+            location.reload();
+        });
+});
+
