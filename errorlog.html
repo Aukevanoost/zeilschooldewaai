@@ -1323,4 +1323,56 @@
 #8 {main}</pre>
 
            <hr />
-<p>Error on Jan 12, 2016 13:31PM - Invalid argument supplied for foreach() in C:\wamp\www\zeilschooldewaai\app\views\beheer\beheer.php on line 26</p><p>Error on Jan 14, 2016 11:30AM - current() expects parameter 1 to be array, null given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 22</p><p>Error on Jan 14, 2016 11:32AM - next() expects parameter 1 to be array, null given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 25</p><p>Error on Jan 14, 2016 11:39AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 11:39AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 11:39AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 11:39AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 11:40AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 22</p>
+<p>Error on Jan 12, 2016 13:31PM - Invalid argument supplied for foreach() in C:\wamp\www\zeilschooldewaai\app\views\beheer\beheer.php on line 26</p><p>Error on Jan 14, 2016 11:30AM - current() expects parameter 1 to be array, null given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 22</p><p>Error on Jan 14, 2016 11:32AM - next() expects parameter 1 to be array, null given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 25</p><p>Error on Jan 14, 2016 11:39AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 11:39AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 11:39AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 11:39AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 11:40AM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 22</p><p>Error on Jan 14, 2016 14:02PM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 21</p><p>Error on Jan 14, 2016 14:02PM - get_object_vars() expects parameter 1 to be object, array given in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 21</p><h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Jan 14, 2016 14:12PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 82</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php(82): PDO->query('SELECT cursusna...')
+#1 C:\xampp\htdocs\zeilschooldewaai\app\Models\Db.php(108): Helpers\Database->raw('SELECT cursusna...')
+#2 C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php(21): Models\Db->getAllData('SELECT cursusna...')
+#3 C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php(39): Controllers\beheerCursussen->getCursussen()
+#4 [internal function]: Controllers\beheerCursussen->index()
+#5 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(126): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(217): Core\Router::invokeObject('Controllers\\beh...')
+#7 C:\xampp\htdocs\zeilschooldewaai\app\Core\routes.php(50): Core\Router::dispatch()
+#8 C:\xampp\htdocs\zeilschooldewaai\index.php(81): require('C:\\xampp\\htdocs...')
+#9 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Jan 14, 2016 14:13PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 82</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php(82): PDO->query('SELECT `cursusn...')
+#1 C:\xampp\htdocs\zeilschooldewaai\app\Models\Db.php(108): Helpers\Database->raw('SELECT `cursusn...')
+#2 C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php(21): Models\Db->getAllData('SELECT `cursusn...')
+#3 C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php(39): Controllers\beheerCursussen->getCursussen()
+#4 [internal function]: Controllers\beheerCursussen->index()
+#5 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(126): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(217): Core\Router::invokeObject('Controllers\\beh...')
+#7 C:\xampp\htdocs\zeilschooldewaai\app\Core\routes.php(50): Core\Router::dispatch()
+#8 C:\xampp\htdocs\zeilschooldewaai\index.php(81): require('C:\\xampp\\htdocs...')
+#9 {main}</pre>
+
+           <hr />
+<p>Error on Jan 14, 2016 14:18PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 14:19PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 24</p><p>Error on Jan 14, 2016 14:19PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 24</p>

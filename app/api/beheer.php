@@ -9,9 +9,8 @@
     /* Beheerder toevoegen
     ================================================================================== */
     if($_GET['action'] == '1') {
-        echo json_encode($_POST);
 
-        $qry = "INSERT INTO `klanten` (`klant_id`, `geslacht`, `voorletters`, `voornaam`, `tussenvoegsel`, `achternaam`, `adres`, `postcode`, `woonplaats`, `telefoonnummer`, `mobiel`, `email`, `geboortedatum`, `niveau`, `wachtwoord`, `url`, `priviledged`) VALUES (NULL, '', '".$_POST['voorletters']."', '".$_POST['voornaam']."', '".$_POST['tussenvoegsel']."', '".$_POST['achternaam']."', '', '', '', NULL, '".$_POST['mobiel']."', '".$_POST['email']."', '', '', '".sha1($_POST['wachtwoord'])."', '', '2');";
+        $qry = "INSERT INTO `klanten` (`klant_id`, `geslacht`, `voorletters`, `voornaam`, `tussenvoegsel`, `achternaam`, `adres`, `postcode`, `woonplaats`, `telefoonnummer`, `mobiel`, `email`, `geboortedatum`, `niveau`, `wachtwoord`, `url`, `priviledged`) VALUES (NULL, '', '".$_POST['voorletters']."', '".$_POST['voornaam']."', '".$_POST['tussenvoegsel']."', '".$_POST['achternaam']."', '', '', '', '', '".$_POST['mobiel']."', '".$_POST['email']."', '', '', '".sha1($_POST['wachtwoord'])."', '', '2');";
         $rslt = mysqli_query($link, $qry);
     }
 

@@ -102,4 +102,11 @@
 		{
 			$result = $this->db->delete($tabel, $where);
 		}
+
+		public function getAllData($sql)
+		{
+			$result = $this->db->select($sql);
+
+			return $result;
+		}
 	}

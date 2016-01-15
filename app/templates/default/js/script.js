@@ -166,7 +166,7 @@ $("#BeheerderToevoegen").click(function(){
 
     // loop door de gegevens die ingevoerd moeten worden
     for (var i = 0; i < items.length; i++) {
-        body += '<tr><th>' + items[i] + '</th><td><input type="text" name="' + items[i] + '" class="form-control" placeholder="Voer ' + items[i] + ' in.." required/></td></tr>';
+        body += '<tr><th>' + items[i] + '</th><td><input type="text" name="' + items[i] + '" class="form-control" placeholder="Voer ' + items[i] + ' in.."/></td></tr>';
     }
 
     // onderdelen in de modal zetten
