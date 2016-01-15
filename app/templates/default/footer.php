@@ -27,7 +27,7 @@ $hooks = Hooks::get();
 				<p>Zeilschool de Waai is een zeilschool waar voornamelijk cursussen worden gehouden. U kan zich gemakkelijk aanmelden voor een cursus en ook welk niveau. Aan elk niveau wordt automatisch een boot toegevoegd. Hopelijk tot snel.</p>
 			</div>
 			<div class="col-md-4">
-				<img src="/zeilschooldewaai/app/templates/default/img/logo.png" id="Logo" /><br>
+				<img src="/zeilschooldewaai/app/templates/default/img/logo.png" id="Logo" style="display:inline;"/><br>
 				&copy; <?php echo date('Y'); ?> Zeilschool de Waai.<br>
 				Alle rechten voorbehouden.
 			</div>
