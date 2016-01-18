@@ -75,7 +75,7 @@ $hooks->run('afterBody');
 		      <!-- Admin menu -->
               <?php } elseif (\Helpers\Session::get('rechten')==3 ) { ?>
          <div class="Left">
-              <a href="beheer"><div class="NavItem <?php if($data['title'] == 'Beheer'){echo 'active';} ?>">Beheer</div></a>            
+              <a href="beheer"><div class="NavItem <?php if($data['title'] == 'beheer'){echo 'active';} ?>">Beheer</div></a>            
         </div>
         
 			<!-- Normale menu items.-->
