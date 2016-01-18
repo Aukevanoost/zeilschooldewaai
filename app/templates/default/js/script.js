@@ -164,6 +164,9 @@ $('#CursusForm').submit(function (e) {
 });
 
 
+
+
+
 /* Superadmin
 ================================================================================== */
 /* beheerders toevoegen */
@@ -256,6 +259,10 @@ $('#AdminForm').submit(function (e) {
     });
 });
 
+
+
+
+
 /* Beheer Klanten
 ================================================================================== */
 $("#KlantenToevoegen").click(function(){
@@ -345,9 +352,13 @@ $('#BeheerForm').submit(function (e) {
     $.post( "/zeilschooldewaai/app/api/klanten.php?action=" + action, $('form').serialize())
         .done(function( data ) {
             console.log(data);
-            //location.reload();
+            location.reload();
     });
 });
+
+
+
+
 
 /* Instructeurs
  ================================================================================== */
@@ -433,3 +444,101 @@ $('#InstructeurForm').submit(function (e) {
             location.reload();
         });
 });
+
+
+
+
+
+/* Cursussen
+ ================================================================================== */
+$("#cursus_id").click(function(){
+
+    // gegevens verzamelen
+    var items = [ "cursusnaam", "cursusprijs", "cursusomschrijving", "startdatum", "einddatum", "niveau", "type_id"];
+    var body = '';
+
+    // loop door de gegevens die ingevoerd moeten worden
+    for (var i = 0; i < items.length; i++) {
+        body += '<tr><th>' + items[i] + '</th><td><input type="text" name="' + items[i] + '" class="form-control" placeholder="Voer ' + items[i] + ' in.." required/></td></tr>';
+    }
+
+    // onderdelen in de modal zetten
+    $("#CursusModalHeader").html('Cursus toevoegen');
+    $("#CursusModalBody").html(body);
+    $('#SaveBtn').attr('data-action','1');
+
+    // modal laten zien
+    $('#CursusModal').modal('show');
+    
+});
+
+/* Cursus wijzigen */
+$(".EditRow").click(function() {
+console.log('data');
+    // id ophalen
+    var id = $(this).attr('data-id');
+
+    //gegevens ophalen
+    $.ajax({
+        method: "POST",
+        url: "/zeilschooldewaai/app/api/cursusbeheer.php?action=2",
+        data: {
+            cursus_id: id
+        },
+        success: function( data ) {
+
+            // data verzamelen
+            data = JSON.parse(data);
+            data = data[0];
+
+            // input velden genereren
+            body = '<tr><th>Id:</th><td><input type="hidden" name="cursus_id" value="' + id + '" />' + id + '</td></tr>';
+            $.each(data, function(key, value){
+                body += '<tr><th>' + key + ':</th><td><input type="text" name="' + key + '" value="' + value + '" class="form-control" placeholder="Voer ' + key + ' in.."/></td></tr>';
+            });
+           
+
+            // modal vullen met gegevens
+            $("#CursusModalHeader").html('Klanten wijzigen');
+            $("#CursusModalBody").html(body);
+            $('#SaveBtn').attr('data-action','3');
+
+            // modal laten zien
+            $('#CursusModal').modal('show');
+        }
+    });
+});
+
+/* Cursus verwijderen */
+$(".DeleteRow").on('click', function(){
+    var cursus_id = $(this).attr('data-id');
+    
+    body = '<input type="hidden" name="cursus_id" value="' + cursus_id + '" /> Weet u zeker dat u deze cursus wil verwijderen?';
+
+    $("#CursusModalHeader").html('Cursus verwijderen');
+    $("#CursusModalBody").html(body);
+    $('#SaveBtn').attr('data-action','4');
+    $('#SaveBtn').html('Verwijder cursus');
+    $('#SaveBtn').attr('class','btn btn-danger');
+
+    // modal laten zien
+    $('#CursusModal').modal('show');
+});
+
+
+/* Formulier Submitten */
+$('#CursusForm').submit(function (e) {
+    // zorgt ervoor dat het formulier niet submit
+    e.preventDefault();
+
+    // type CRUD defineren
+    var action = $('#SaveBtn').attr('data-action');
+
+    // send dem data to validation
+    $.post( "/zeilschooldewaai/app/api/cursusbeheer.php?action=" + action, $('form').serialize())
+        .done(function( data ) {
+            console.log(data);
+            location.reload();
+    });
+});
+
