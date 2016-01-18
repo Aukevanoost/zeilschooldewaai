@@ -170,7 +170,7 @@ $('#CursusForm').submit(function (e) {
 /* Superadmin
 ================================================================================== */
 /* beheerders toevoegen */
-$("#BeheerderToevoegen").click(function(){
+$("#klant_id").click(function(){
 
     // gegevens verzamelen
     var items = [ "voorletters", "voornaam","tussenvoegsel","achternaam","mobiel","email","wachtwoord"];
@@ -191,7 +191,7 @@ $("#BeheerderToevoegen").click(function(){
 });
 
 /* beheerder wijzigen */
-$(".EditRow").click(function() {
+$(".klant_idEditRow").click(function() {
     // id ophalen
     var id = $(this).attr('data-id');
 
@@ -205,6 +205,7 @@ $(".EditRow").click(function() {
         success: function( data ) {
 
             // data verzamelen
+            console.log(data);
             data = JSON.parse(data);
             data = data[0];
 
@@ -227,7 +228,7 @@ $(".EditRow").click(function() {
 });
 
 /* Gebruiker verwijderen */
-$(".DeleteRow").click(function(){
+$(".klant_idDeleteRow").click(function(){
     var klant_id = $(this).attr('data-id');
 
     body = '<input type="hidden" name="klant_id" value="' + klant_id + '" /> Weet u zeker dat u deze beheerder wil verwijderen?';
