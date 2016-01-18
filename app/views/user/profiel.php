@@ -1,7 +1,5 @@
 <?php
 
-use Core\Language;
-
 // Bekijk of de user is ingelogd.
 if (\Helpers\Session::get('id')) {
 	?>

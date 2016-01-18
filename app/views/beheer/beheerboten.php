@@ -15,15 +15,15 @@ use Core\Language;
 
 
         <div class="modal fade" tabindex="-1" role="dialog" id="AdminModal" style="z-index: 99999999999999999999">
-            <form  action="" method="post" id="AdminForm">
+            <form  action="" method="post" id="BootForm">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="AdminModalHeader">Sample</h4>
+                            <h4 class="modal-title" id="BootModalHeader">Sample</h4>
                         </div>
                         <div class="modal-body">
-                            <table id="AdminModalBody" class="table">
+                            <table id="BootModalBody" class="table">
 
                             </table>
                         </div>
