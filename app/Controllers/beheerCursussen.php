@@ -21,13 +21,23 @@ class beheerCursussen extends Controller
         $result = $this->dbCursussen->getAllData($sql);
         $array = get_object_vars($result[0]);
         $thead = "";
-        foreach ($array as $key => $value) {
+        $i = 0;
+
+        foreach ($array as $key => $value) 
+        {
             $thead .= "<th>$key</th>";
+            $tableNames[$i] = $key;
+            $i++;
         }
         $ret = "<table class='table table-hover'><button id='beheerCursussen' class='btn btn-primary'>Toevoegen</button>";
         $ret .= "<thead><tr>".$thead."</tr></thead>";
-        foreach ($result as $key) {
-            $ret .= "<tr><td>".$key->cursusnaam."</td><td>".$key->cursusprijs."</td><td>".$key->cursusomschrijving."</td><td>".$key->startdatum."</td><td>".$key->einddatum."</td><td><i class='fa fa-pencil'></i></td><td><i class='fa fa-times'></i></td></tr>";
+
+        foreach ($result as $key => $value) {
+            $ret .= "<tr>";
+            foreach ($value as $res => $val) {     
+                $ret .= "<td>".$val."</td>";
+            }
+            $ret .= "</tr>";
         }
         $ret .= "</table>";
 

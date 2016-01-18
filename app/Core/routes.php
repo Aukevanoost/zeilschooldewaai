@@ -34,11 +34,11 @@ Router::any('loguit', 'Controllers\Login@loguit');
 
 /* beheer sectie */
 Router::any('beheer', 'Controllers\Beheer@beheer');
-Router::any('beheercursussen', 'Controllers\beheerCursussen@index');
+Router::any('beheercursussen', 'Controllers\beheer@beheerCursussen');
 Router::any('beheerklanten', 'Controllers\beheerKlanten@index');
-//Router::any('beheerboten', 'Controllers\beheerBoten@index');
-//Router::any('beheerinstructeurs', 'Controllers\beheerInstructeurs@index');
-//Router::any('cursistkoppelen', 'Controllers\cursistKoppelen@index');
+Router::any('beheerboten', 'Controllers\beheer@beheerBoten');
+Router::any('beheerinstructeurs', 'Controllers\beheer@instructeur');
+Router::any('cursistkoppelen', 'Controllers\beheer@cursistKoppelen');
 
 
 /** Module routes. */
