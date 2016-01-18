@@ -120,18 +120,6 @@ class Beheer extends Controller
         View::renderTemplate('footer', $data);
     }
     
-    public function beheerKlanten()
-    {
-        $data['title'] = $this->language->get('beheer klanten');
-
-        $rechten = \Helpers\Session::get('rechten') - 1;
-        $data["users"] = $this->getTable("SELECT klant_id, voornaam, tussenvoegsel, achternaam, email FROM `klanten` WHERE priviledged=".$rechten, "klant_id");
-
-        View::renderTemplate('header', $data);
-        View::render('beheer/beheerklanten', $data);
-        View::renderTemplate('footer', $data);
-    }
-    
     public function beheerCursussen()
     {
         $this->checkValidation(2);
