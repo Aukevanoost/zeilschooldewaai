@@ -18,7 +18,7 @@
     /* Cursusgegevens ophalen op basis van id
     ================================================================================== */
     if($_GET['action'] == '2') {
-        $qry = "SELECT cursusnaam, cursusprijs, cursusomschrijving, startdatum, einddatum, niveau, type_id, FROM cursussen WHERE cursus_id = '".$_POST['cursus_id']."'";
+        $qry = "SELECT cursusnaam, cursusprijs, cursusomschrijving, startdatum, einddatum, niveau, type_id FROM cursussen WHERE cursus_id = '".$_POST['cursus_id']."'";
         $rslt = mysqli_query($link, $qry);
 
         $results = array();

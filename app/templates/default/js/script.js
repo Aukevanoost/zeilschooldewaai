@@ -356,10 +356,6 @@ $('#BeheerForm').submit(function (e) {
     });
 });
 
-
-
-
-
 /* Instructeurs
  ================================================================================== */
  /* instruct toevoegen */
@@ -488,6 +484,7 @@ console.log('data');
         success: function( data ) {
 
             // data verzamelen
+            console.log(data);
             data = JSON.parse(data);
             data = data[0];
 

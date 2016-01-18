@@ -43,7 +43,19 @@ class Login extends Controller
                     \Helpers\Session::set('id', $passw[0]->klant_id);
                     \Helpers\Session::set('rechten', $passw[0]->priviledged);
                     //Stuurt je door naar de homepagina.
-                    \Helpers\Url::redirect('home'); 
+                    if ($passw[0]->priviledged == 3) 
+                    {
+                        \Helpers\Url::redirect('beheer'); 
+                    }
+                    elseif ($passw[0]->priviledged == 2) 
+                    {
+                        \Helpers\Url::redirect('beheerklanten'); 
+                    }
+                    else
+                    {
+                        \Helpers\Url::redirect('home'); 
+                    }
+                    
                 }
                 else
                 {
