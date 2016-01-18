@@ -138,8 +138,6 @@ $hooks->run('afterBody');
 			<a href="boten"><div class="ResponsiveItem">Boten</div></a>
 			<a href="cursussen"><div class="ResponsiveItem">Cursussen</div></a>
 			<a href="contact"><div class="ResponsiveItem">contact</div></a>
-			<a href="login"><div class="ResponsiveItem">Inloggen</div></a>
-			<a href="registreren"><div class="ResponsiveItem">Registreren</div></a>
 		<?php } ?>
 
 		<?php
