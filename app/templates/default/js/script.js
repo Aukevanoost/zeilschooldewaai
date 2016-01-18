@@ -352,7 +352,7 @@ $('#BeheerForm').submit(function (e) {
 /* Instructeurs
  ================================================================================== */
  /* instruct toevoegen */
-$("#InstructeurToevoegen").click(function(){
+$("#instructeur_id").click(function(){
     // gegevens verzamelen
     var items = [ "voorletters", "voornaam","tussenvoegsel","achternaam"];
     var body = '';

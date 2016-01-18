@@ -45,7 +45,7 @@ class beheerKlanten extends Controller
 
     public function index()
     {
-        $data['title'] = $this->language->get('beheerKlanten');
+        $data['title'] = $this->language->get('beheer klanten');
 
         $rechten = \Helpers\Session::get('rechten') - 1;
         $result = $this->getData('klanten', $rechten);
