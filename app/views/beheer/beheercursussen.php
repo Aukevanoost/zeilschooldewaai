@@ -33,4 +33,3 @@ use Core\Language;
                 </div>
             </form>
         </div>
-    </div>

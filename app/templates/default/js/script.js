@@ -473,7 +473,7 @@ $("#cursus_id").click(function(){
 });
 
 /* Cursus wijzigen */
-$(".EditRow").click(function() {
+$(".cursus_idEditRow").click(function() {
 console.log('data');
     // id ophalen
     var id = $(this).attr('data-id');
@@ -496,6 +496,7 @@ console.log('data');
             $.each(data, function(key, value){
                 body += '<tr><th>' + key + ':</th><td><input type="text" name="' + key + '" value="' + value + '" class="form-control" placeholder="Voer ' + key + ' in.."/></td></tr>';
             });
+
            
 
             // modal vullen met gegevens
