@@ -170,7 +170,7 @@ $('#CursusForm').submit(function (e) {
 /* Superadmin
 ================================================================================== */
 /* beheerders toevoegen */
-$("#BeheerderToevoegen").click(function(){
+$("#klant_id").click(function(){
 
     // gegevens verzamelen
     var items = [ "voorletters", "voornaam","tussenvoegsel","achternaam","mobiel","email","wachtwoord"];
@@ -191,7 +191,7 @@ $("#BeheerderToevoegen").click(function(){
 });
 
 /* beheerder wijzigen */
-$(".EditRow").click(function() {
+$(".klant_idEditRow").click(function() {
     // id ophalen
     var id = $(this).attr('data-id');
 
@@ -227,7 +227,7 @@ $(".EditRow").click(function() {
 });
 
 /* Gebruiker verwijderen */
-$(".DeleteRow").click(function(){
+$(".klant_idDeleteRow").click(function(){
     var klant_id = $(this).attr('data-id');
 
     body = '<input type="hidden" name="klant_id" value="' + klant_id + '" /> Weet u zeker dat u deze beheerder wil verwijderen?';
@@ -470,7 +470,7 @@ $("#cursus_id").click(function(){
 
 /* Cursus wijzigen */
 $(".cursus_idEditRow").click(function() {
-console.log('data');
+
     // id ophalen
     var id = $(this).attr('data-id');
 
@@ -540,3 +540,97 @@ $('#CursusForm').submit(function (e) {
     });
 });
 
+/* Boten 
+ ================================================================================== */
+$("#boot_id").click(function(){
+console.log('data');
+    // gegevens verzamelen
+    var items = [ "bootnaam", "bouwjaar", "type_id"];
+    var body = '';
+
+    // loop door de gegevens die ingevoerd moeten worden
+    for (var i = 0; i < items.length; i++) {
+        body += '<tr><th>' + items[i] + '</th><td><input type="text" name="' + items[i] + '" class="form-control" placeholder="Voer ' + items[i] + ' in.." required/></td></tr>';
+    }
+
+    // onderdelen in de modal zetten
+    $("#BootModalHeader").html('Boten toevoegen');
+    $("#BootModalBody").html(body);
+    $('#SaveBtn').attr('data-action','1');
+
+    // modal laten zien
+    $('#BootModal').modal('show');
+    
+});
+
+/* Boot wijzigen */
+$(".boot_idEditRow").click(function() {
+console.log('data');
+    // id ophalen
+    var id = $(this).attr('data-id');
+
+    //gegevens ophalen
+    $.ajax({
+        method: "POST",
+        url: "/zeilschooldewaai/app/api/boten.php?action=2",
+        data: {
+            boot_id: id
+        },
+        success: function( data ) {
+
+            // data verzamelen
+            console.log(data);
+            data = JSON.parse(data);
+            data = data[0];
+
+            // input velden genereren
+            body = '<tr><th>Id:</th><td><input type="hidden" name="boot_id" value="' + id + '" />' + id + '</td></tr>';
+            $.each(data, function(key, value){
+                body += '<tr><th>' + key + ':</th><td><input type="text" name="' + key + '" value="' + value + '" class="form-control" placeholder="Voer ' + key + ' in.."/></td></tr>';
+            });
+
+           
+
+            // modal vullen met gegevens
+            $("#BootModalHeader").html('Boten wijzigen');
+            $("#BootModalBody").html(body);
+            $('#SaveBtn').attr('data-action','3');
+
+            // modal laten zien
+            $('#BootModal').modal('show');
+        }
+    });
+});
+
+/* Cursus verwijderen */
+$(".boten_idDeleteRow").on('click', function(){
+    var cursus_id = $(this).attr('data-id');
+    
+    body = '<input type="hidden" name="boot_id" value="' + boot_id + '" /> Weet u zeker dat u deze boot wil verwijderen?';
+
+    $("#BootModalHeader").html('Boten verwijderen');
+    $("#BootModalBody").html(body);
+    $('#SaveBtn').attr('data-action','4');
+    $('#SaveBtn').html('Verwijder boot');
+    $('#SaveBtn').attr('class','btn btn-danger');
+
+    // modal laten zien
+    $('#BootModal').modal('show');
+});
+
+
+/* Formulier Submitten */
+$('#BootForm').submit(function (e) {
+    // zorgt ervoor dat het formulier niet submit
+    e.preventDefault();
+
+    // type CRUD defineren
+    var action = $('#SaveBtn').attr('data-action');
+
+    // send dem data to validation
+    $.post( "/zeilschooldewaai/app/api/boten.php?action=" + action, $('form').serialize())
+        .done(function( data ) {
+            console.log(data);
+            location.reload();
+    });
+});
