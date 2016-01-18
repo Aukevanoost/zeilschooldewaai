@@ -205,6 +205,7 @@ $(".klant_idEditRow").click(function() {
         success: function( data ) {
 
             // data verzamelen
+            console.log(data);
             data = JSON.parse(data);
             data = data[0];
 
