@@ -255,7 +255,7 @@ $('#AdminForm').submit(function (e) {
     $.post( "/zeilschooldewaai/app/api/beheer.php?action=" + action, $('form').serialize())
         .done(function( data ) {
             console.log(data);
-            // location.reload();
+            location.reload();
     });
 });
 
@@ -265,7 +265,7 @@ $('#AdminForm').submit(function (e) {
 
 /* Beheer Klanten
 ================================================================================== */
-$("#KlantenToevoegen").click(function(){
+$("#klant_id").click(function(){
 
     // gegevens verzamelen
     var items = [ "geslacht", "voorletters", "voornaam", "tussenvoegsel", "achternaam", "adres", "postcode", "woonplaats", "telefoonnummer", "mobiel", "email", "geboortedatum", "niveau", "wachtwoord"];
@@ -287,7 +287,7 @@ $("#KlantenToevoegen").click(function(){
 });
 
 /* beheerder wijzigen */
-$(".EditRow").click(function() {
+$(".klant_idEditRow").click(function() {
 
     // id ophalen
     var id = $(this).attr('data-id');
@@ -324,7 +324,7 @@ $(".EditRow").click(function() {
 });
 
 /* Gebruiker verwijderen */
-$(".DeleteRow").click(function(){
+$(".klant_idDeleteRow").click(function(){
     var klant_id = $(this).attr('data-id');
 
     body = '<input type="hidden" name="klant_id" value="' + klant_id + '" /> Weet u zeker dat u deze klant wil verwijderen?';
@@ -377,7 +377,7 @@ $("#instructeur_id").click(function(){
     $('#InstructeurModal').modal('show');
 });
 /* instructeur wijzigen */
-$(".EditInstructeur").click(function() {
+$(".instructeur_idEditRow").click(function() {
     // id ophalen
     var id = $(this).attr('data-id');
     //gegevens ophalen
@@ -416,7 +416,7 @@ $(".EditInstructeur").click(function() {
     });
 });
 /* Instructeur verwijderen */
-$(".DeleteInstructeur").click(function(){
+$(".instructeur_idDeleteInstructeur").click(function(){
     var instructeur_id = $(this).attr('data-id');
     body = '<input type="hidden" name="instructeur_id" value="' + instructeur_id + '" /> Weet u zeker dat u deze instructeur wil verwijderen?';
     $("#InstructeurModalHeader").html('Instructeur verwijderen');
@@ -508,7 +508,7 @@ console.log('data');
 });
 
 /* Cursus verwijderen */
-$(".DeleteRow").on('click', function(){
+$(".cursus_idDeleteRow").on('click', function(){
     var cursus_id = $(this).attr('data-id');
     
     body = '<input type="hidden" name="cursus_id" value="' + cursus_id + '" /> Weet u zeker dat u deze cursus wil verwijderen?';
