@@ -35,7 +35,7 @@ Router::any('loguit', 'Controllers\Login@loguit');
 /* beheer sectie */
 Router::any('beheer', 'Controllers\Beheer@beheer');
 Router::any('beheercursussen', 'Controllers\beheer@beheerCursussen');
-Router::any('beheerklanten', 'Controllers\beheerKlanten@index');
+Router::any('beheerklanten', 'Controllers\beheer@beheerKlanten');
 Router::any('beheerboten', 'Controllers\beheer@beheerBoten');
 Router::any('beheerinstructeurs', 'Controllers\beheer@instructeur');
 Router::any('cursistkoppelen', 'Controllers\beheer@cursistKoppelen');

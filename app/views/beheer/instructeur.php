@@ -7,13 +7,11 @@ use Core\Language;
 
 ?>
 <div class="page-header">
-    <h1 style="text-align: center">Beheer</h1>
+    <h1 style="text-align: center"><?= $data['title'] ?></h1>
 </div>
     <?php
     echo $data["instructeurs"];
     ?>
-    </tbody>
-</table>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="InstructeurModal" style="z-index: 99999999">
     <form  action="" method="post" id="InstructeurForm">
