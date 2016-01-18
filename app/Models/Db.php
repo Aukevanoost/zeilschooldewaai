@@ -65,7 +65,9 @@
 
 		public function updateUser($id, $geslacht, $voorletters, $voornaam, $tussenvoegsel, $achternaam, $adres, $postcode, $woonplaats, $telefoonnummer, $mobiel, $geboortedatum, $niveau)
 		{
-			$this->db->raw("UPDATE klanten SET geslacht='$geslacht', voorletters='$voorletters', voornaam='$voornaam', tussenvoegsel='$tussenvoegsel', achternaam='$achternaam', adres='$adres', postcode='$postcode', woonplaats='$woonplaats', telefoonnummer='$telefoonnummer', mobiel='$mobiel', geboortedatum='$geboortedatum', niveau='$niveau' WHERE klant_id='$id';");		
+			$result = $this->db->raw("UPDATE klanten SET geslacht='$geslacht', voorletters='$voorletters', voornaam='$voornaam', tussenvoegsel='$tussenvoegsel', achternaam='$achternaam', adres='$adres', postcode='$postcode', woonplaats='$woonplaats', telefoonnummer='$telefoonnummer', mobiel='$mobiel', geboortedatum='$geboortedatum', niveau='$niveau' WHERE klant_id='$id';");		
+
+			return $result;
 		}
 
 		public function updateUserPassword($id, $wachtwoord)
