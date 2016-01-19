@@ -37,9 +37,9 @@ Router::any('beheer', 'Controllers\Beheer@beheer');
 Router::any('beheercursussen', 'Controllers\beheer@beheerCursussen');
 Router::any('beheerklanten', 'Controllers\beheer@beheerKlanten');
 Router::any('beheerboten', 'Controllers\beheer@beheerBoten');
-Router::any('beheerinstructeurs', 'Controllers\Beheer@instructeur');
-Router::any('cursistkoppelen', 'Controllers\cursistKoppelen@index');
-
+Router::any('beheerinstructeurs', 'Controllers\beheer@instructeur');
+Router::any('createpdf/(:all)', 'Controllers\Beheer@createPdf');
+Router::any('cursistkoppelen', 'Controllers\beheer@cursistKoppelen');
 
 /** Module routes. */
 $hooks = Hooks::get();
