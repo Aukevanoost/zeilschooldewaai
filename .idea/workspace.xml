@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffb9956d-68e8-4b45-823f-29ea06bedff2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/default/js/cursistkoppelen.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/api/koppelen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Db.php" afterPath="$PROJECT_DIR$/app/Models/Db.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controllers/beheerCursussen.php" afterPath="$PROJECT_DIR$/app/Controllers/beheerCursussen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controllers/cursistKoppelen.php" afterPath="$PROJECT_DIR$/app/Controllers/cursistKoppelen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/beheer/cursistkoppelen.php" afterPath="$PROJECT_DIR$/app/views/beheer/cursistkoppelen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/default/footer.php" afterPath="$PROJECT_DIR$/app/templates/default/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/beheer/beheerklanten.php" afterPath="$PROJECT_DIR$/app/views/beheer/beheerklanten.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Core/routes.php" afterPath="$PROJECT_DIR$/app/Core/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/default/js/script.js" afterPath="$PROJECT_DIR$/app/templates/default/js/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="zeilschooldewaai.iws" />
@@ -33,87 +26,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cursistKoppelen.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Controllers/cursistKoppelen.php">
+      <file leaf-file-name="beheerklanten.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/beheer/beheerklanten.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.115385">
-              <caret line="47" column="91" selection-start-line="47" selection-start-column="77" selection-end-line="47" selection-end-column="91" />
-              <folding>
-                <marker date="1453146937298" expanded="true" signature="637:651" placeholder="..." />
-                <marker date="1453146937298" expanded="true" signature="753:767" placeholder="..." />
-                <marker date="1453146937298" expanded="true" signature="1103:1223" placeholder="..." />
-                <marker date="1453146937298" expanded="true" signature="1103:1912" placeholder="..." />
-                <marker date="1453146937298" expanded="false" signature="1440:1457" placeholder="..." />
-                <marker date="1453146937298" expanded="true" signature="1458:1890" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cursistkoppelen.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/beheer/cursistkoppelen.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3076923">
-              <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/default/footer.php">
+      <file leaf-file-name="beheerKlanten.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Controllers/beheerKlanten.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+            <state vertical-scroll-proportion="8.692307">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="klanten.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/api/klanten.php">
+      <file leaf-file-name="Beheer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Controllers/Beheer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-              <folding>
-                <marker date="1452847663174" expanded="true" signature="454:1073" placeholder="INSERT INTO ..." />
-                <marker date="1452847663174" expanded="true" signature="1349:1551" placeholder="SELECT gesla..klanten..." />
-                <marker date="1452847663174" expanded="true" signature="3353:3414" placeholder="DELETE FROM ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cursistkoppelen.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/default/js/cursistkoppelen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+            <state vertical-scroll-proportion="-22.884615">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="koppelen.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/api/koppelen.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Core/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.93289477">
-              <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
-              <folding>
-                <marker date="1453147350692" expanded="true" signature="416:523" placeholder="SELECT cursu..cursussen..." />
-                <marker date="1453147350692" expanded="true" signature="812:1034" placeholder="SELECT * FRO..klanten..." />
-                <marker date="1453147350692" expanded="true" signature="958:1010" placeholder="SELECT klant..koppelinggen..." />
-                <marker date="1453147350692" expanded="true" signature="1233:1450" placeholder="SELECT *, (S..boten..." />
-                <marker date="1453147350692" expanded="true" signature="1244:1333" placeholder="SELECT Count..koppelinggen..." />
-                <marker date="1453147350692" expanded="true" signature="1657:1939" placeholder="SELECT i.ins..instructeurs..." />
-                <marker date="1453147350692" expanded="true" signature="3197:3229" placeholder="INSERT INTO ..." />
-                <marker date="1453147350692" expanded="true" signature="3609:3971" placeholder="SELECT c.voo..koppelinggen..." />
-                <marker date="1453147350692" expanded="true" signature="4381:4421" placeholder="DELETE FROM ..." />
-                <marker date="1453147350692" expanded="true" signature="4381:4447" placeholder="DELETE FROM ..." />
-                <marker date="1453147350692" expanded="true" signature="4381:4485" placeholder="DELETE FROM ..." />
-                <marker date="1453147350692" expanded="true" signature="4381:4498" placeholder="DELETE FROM ..." />
-                <marker date="1453147350692" expanded="true" signature="4381:4519" placeholder="DELETE FROM ..." />
-              </folding>
+            <state vertical-scroll-proportion="0.69342107">
+              <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,7 +103,6 @@
         <option value="$PROJECT_DIR$/app/api/instructeurs.php" />
         <option value="$PROJECT_DIR$/app/views/beheer/beheerinstructeurs.php" />
         <option value="$PROJECT_DIR$/app/Controllers/beheerInstructeurs.php" />
-        <option value="$PROJECT_DIR$/app/Core/routes.php" />
         <option value="$PROJECT_DIR$/app/Controllers/beheerCursussen.php" />
         <option value="$PROJECT_DIR$/app/Models/Db.php" />
         <option value="$PROJECT_DIR$/app/templates/default/footer.php" />
@@ -164,6 +111,8 @@
         <option value="$PROJECT_DIR$/app/Controllers/cursistKoppelen.php" />
         <option value="$PROJECT_DIR$/app/templates/default/js/cursistkoppelen.js" />
         <option value="$PROJECT_DIR$/app/api/koppelen.php" />
+        <option value="$PROJECT_DIR$/app/views/beheer/beheerklanten.php" />
+        <option value="$PROJECT_DIR$/app/Core/routes.php" />
       </list>
     </option>
   </component>
@@ -342,7 +291,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="Core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,10 +357,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -562,7 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.0">
           <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controllers/Beheer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9394736">
-          <caret line="98" column="40" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/beheer/instructeur.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.73157895">
@@ -682,7 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.73157895">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="46" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,35 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8210526">
           <caret line="41" column="89" selection-start-line="41" selection-start-column="89" selection-end-line="41" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/beheer/beheerinstructeurs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controllers/beheerInstructeurs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controllers/beheerKlanten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="17.653847">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="73" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Core/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.576923">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -740,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.264151">
           <caret line="121" column="213" selection-start-line="121" selection-start-column="213" selection-end-line="121" selection-end-column="213" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,18 +661,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/beheer/beheerklanten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.346154">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/api/cursussen.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.85">
           <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35496184">
           <caret line="944" column="3" selection-start-line="944" selection-start-column="0" selection-end-line="945" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.4134743">
           <caret line="431" column="0" selection-start-line="431" selection-start-column="0" selection-end-line="431" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,16 +695,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
           <folding>
-            <marker date="1452847663174" expanded="true" signature="454:1073" placeholder="INSERT INTO ..." />
-            <marker date="1452847663174" expanded="true" signature="1349:1551" placeholder="SELECT gesla..klanten..." />
-            <marker date="1452847663174" expanded="true" signature="3353:3414" placeholder="DELETE FROM ..." />
+            <marker date="1453191358063" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/beheer/cursistkoppelen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3076923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
           <folding />
         </state>
@@ -812,15 +710,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/cursistKoppelen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.115385">
+        <state vertical-scroll-proportion="0.0">
           <caret line="47" column="91" selection-start-line="47" selection-start-column="77" selection-end-line="47" selection-end-column="91" />
           <folding>
-            <marker date="1453146937298" expanded="true" signature="637:651" placeholder="..." />
-            <marker date="1453146937298" expanded="true" signature="753:767" placeholder="..." />
-            <marker date="1453146937298" expanded="true" signature="1103:1223" placeholder="..." />
-            <marker date="1453146937298" expanded="true" signature="1103:1912" placeholder="..." />
-            <marker date="1453146937298" expanded="false" signature="1440:1457" placeholder="..." />
-            <marker date="1453146937298" expanded="true" signature="1458:1890" placeholder="..." />
+            <marker date="1453191851329" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1453191851329" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1453191851329" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1453191851329" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1453191851329" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1453191851329" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -835,23 +733,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/koppelen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93289477">
+        <state vertical-scroll-proportion="0.8210526">
           <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
           <folding>
-            <marker date="1453147350692" expanded="true" signature="416:523" placeholder="SELECT cursu..cursussen..." />
-            <marker date="1453147350692" expanded="true" signature="812:1034" placeholder="SELECT * FRO..klanten..." />
-            <marker date="1453147350692" expanded="true" signature="958:1010" placeholder="SELECT klant..koppelinggen..." />
-            <marker date="1453147350692" expanded="true" signature="1233:1450" placeholder="SELECT *, (S..boten..." />
-            <marker date="1453147350692" expanded="true" signature="1244:1333" placeholder="SELECT Count..koppelinggen..." />
-            <marker date="1453147350692" expanded="true" signature="1657:1939" placeholder="SELECT i.ins..instructeurs..." />
-            <marker date="1453147350692" expanded="true" signature="3197:3229" placeholder="INSERT INTO ..." />
-            <marker date="1453147350692" expanded="true" signature="3609:3971" placeholder="SELECT c.voo..koppelinggen..." />
-            <marker date="1453147350692" expanded="true" signature="4381:4421" placeholder="DELETE FROM ..." />
-            <marker date="1453147350692" expanded="true" signature="4381:4447" placeholder="DELETE FROM ..." />
-            <marker date="1453147350692" expanded="true" signature="4381:4485" placeholder="DELETE FROM ..." />
-            <marker date="1453147350692" expanded="true" signature="4381:4498" placeholder="DELETE FROM ..." />
-            <marker date="1453147350692" expanded="true" signature="4381:4519" placeholder="DELETE FROM ..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="SELECT cursu..cursussen..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..klanten..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="SELECT klant..koppelinggen..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="SELECT *, (S..boten..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="SELECT Count..koppelinggen..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="SELECT i.ins..instructeurs..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="SELECT c.voo..koppelinggen..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1453191355808" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/beheerKlanten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.692307">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Beheer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.884615">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/beheer/beheerklanten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Core/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69342107">
+          <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -9,9 +9,12 @@ use Core\Language;
     <div class="page-header">
         <h1 style="text-align: center"><?= $data['title'] ?></h1>
     </div>
-                <?php
-                    echo $data["users"];
-                ?>
+        <table class="table table-hover">
+            <?php
+                echo $data["users"];
+            ?>
+        </table>
+
 
 
         <div class="modal fade" tabindex="-1" role="dialog" id="BeheerModal" style="z-index: 99999999999999999999">
