@@ -1,4 +1,4 @@
-/* Sticky navigation
+    /* Sticky navigation
  ================================================================================== */
 jQuery("document").ready(function($) {
     var nav = $('#navbar');
