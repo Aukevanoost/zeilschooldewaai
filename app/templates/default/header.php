@@ -99,7 +99,7 @@ $hooks->run('afterBody');
 			<?php
 				if (\Helpers\Session::get('rechten')==1) {
 			?>
-			<a href="profiel"><div class="NavItem <?php if($data['title'] == 'Profiel'){echo 'active';} ?>"><i class="fa fa-lock"></i> Profiel</div></a>
+			<a href="profiel"><div class="NavItem <?php if($data['title'] == 'Profiel'){echo 'active';} ?>"><i class="fa fa-user"></i> Profiel</div></a>
 			<?php
 				}
 				else

@@ -11,16 +11,6 @@ use Helpers\Hooks;
 //initialise hooks
 $hooks = Hooks::get();
 ?>
-    <style>
-        .required{
-            color:red;
-            font-weight:bold;
-            font-size:20px;
-            position: relative;
-            top: -5px;
-            
-        }
-    </style>
  
     <div class="page-header">
         <h1>Registreren</h1>
