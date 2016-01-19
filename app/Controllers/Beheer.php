@@ -159,24 +159,47 @@ class Beheer extends Controller
         $pdf = new \Models\FPDF();
         $pdf->AddPage();
         $pdf->SetFont('Arial','',12);
-        $pdf->Image('http://localhost/zeilschooldewaai/app/templates/default/img/logo.png',160,10,-200);
+        $pdf->Image('http://localhost/zeilschooldewaai/app/templates/default/img/logo.png',125,10,-100);
 
         $i=0;
+        $pdf->Ln(30);
+        $pdf->SetFont('Arial','B',15);
+        $pdf->Cell(40,5, 'Schema cursus ');
+        $pdf->Ln(10);
+
         foreach ($result as $key) {
             $string = $key->voorletters." ".$key->tussenvoegsel." ".$key->achternaam."";
+            $bootnaam = $key->bootnaam;
+            $instructeur = $key->instructeur_voorletters.' '.$key->instructeur_tussenvoegsels .' '. $key->instructeur_achternaam;
             if ($i==0) {
-                $pdf->SetFont('Arial','B',15);
-                $pdf->Cell(40,5, $key->cursusnaam);
-                $pdf->Ln(6);
                 $pdf->SetFont('Arial','',12);
+                $pdf->Cell(40,5, 'Cursus: '.$key->cursusnaam);
+                $pdf->Ln(10);
+                $pdf->SetFont('Arial','b',12);
                 $pdf->Cell(40,5, "Dit zijn de aangemelde cursisten");
                 $pdf->Ln(10);
+                $pdf->Cell(60,5, 'Gebruiker');
+                $pdf->Cell(40,5, 'Boot');
+                $pdf->Cell(50,5, 'Instructeur');
+                $pdf->Ln(1);
+                $pdf->cell(151,5, '_______________________________________________________________');
             }
-            $pdf->Cell(40,5, $string);
-            $pdf->Ln();
+            $pdf->Ln(6);
+            $pdf->SetFont('Arial','',12);
+            $pdf->Cell(60,5, $string);
+            $pdf->Cell(40,5, $bootnaam);
+            $pdf->Cell(50,5, $instructeur);
+            $pdf->Ln(1);
+            $pdf->cell(151,5, '_______________________________________________________________');
             $i++;
         }
-        
+
+        $pdf->Ln(10);
+        $pdf->SetFont('Arial','',10);
+        $pdf->Cell(100,5, 'Voor meer informatie, kunt u mailen naar info@zeilschooldewaai.nl of');
+        $pdf->Ln(4);
+        $pdf->Cell(100,5, 'bezoek de website: dewaai.aukevanoost.com');
+
         $pdf->Output();
         
         View::renderTemplate('header', $data);
