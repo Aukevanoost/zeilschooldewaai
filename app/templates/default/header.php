@@ -69,7 +69,7 @@ $hooks->run('afterBody');
 			<a href="beheerboten"><div class="NavItem <?php if($data['title'] == 'beheer boten'){echo 'active';} ?>">Beheer Boten</div></a>
 			<a href="beheercursussen"><div class="NavItem <?php if($data['title'] == 'beheer cursussen'){echo 'active';} ?>">Beheer Cursussen</div></a>
 			<a href="beheerinstructeurs"><div class="NavItem <?php if($data['title'] == 'beheer instructeurs'){echo 'active';} ?>">Beheer Instructeurs</div></a>
-			<a href="cursistkoppelen"><div class="NavItem <?php if($data['title'] == 'cursist koppelen'){echo 'active';} ?>">Cursist Koppelen</div></a>
+			<a href="cursistkoppelen"><div class="NavItem <?php if($data['title'] == 'cursisten koppelen'){echo 'active';} ?>">Cursist Koppelen</div></a>
 
 		</div>
 		      <!-- Admin menu -->

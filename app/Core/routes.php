@@ -34,13 +34,10 @@ Router::any('loguit', 'Controllers\Login@loguit');
 
 /* beheer sectie */
 Router::any('beheer', 'Controllers\Beheer@beheer');
-<<<<<<< HEAD
 Router::any('beheercursussen', 'Controllers\beheer@beheerCursussen');
 Router::any('beheerklanten', 'Controllers\beheer@beheerKlanten');
-=======
 Router::any('beheercursussen', 'Controllers\beheerCursussen@index');
 Router::any('beheerklanten', 'Controllers\beheerKlanten@index');
->>>>>>> origin/master
 Router::any('beheerboten', 'Controllers\beheer@beheerBoten');
 Router::any('beheerinstructeurs', 'Controllers\Beheer@instructeur');
 Router::any('cursistkoppelen', 'Controllers\cursistKoppelen@index');

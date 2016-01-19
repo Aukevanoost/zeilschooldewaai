@@ -14,8 +14,8 @@ use Core\Language;
     <thead>
     <tr>
         <th width="40px">#</th>
-        <th width="">Naam</th>
-        <th width="">Start datum</th>
+        <th>Naam</th>
+        <th>Start datum</th>
         <th>Niveau</th>
         <th>Inschrijvingen</th>
         <th></th>
