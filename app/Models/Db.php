@@ -33,6 +33,7 @@
 			
 			return $result;
 		}
+
 		public function insertUsers($geslacht, $voorletters, $voornaam, $tussenvoegsel, $achternaam, $adres, $postcode, $woonplaats, $telefoonnummer, $mobiel, $email, $niveau, $geboortedatum, $wachtwoord, $url)
 		{
 			$sql = "INSERT INTO `zeilschooldewaai`.`klanten` (`klant_id`, `geslacht`, `voorletters`, `voornaam`, `tussenvoegsel`, `achternaam`, `adres`, `postcode`, `woonplaats`, `telefoonnummer`, `mobiel`, `email`, `geboortedatum`, `niveau`, `wachtwoord`, `url`, `priviledged`)
@@ -58,7 +59,8 @@
 			return $result;
 		}
 
-		public function getAllCoursesOverzicht(){
+		public function getAllCoursesOverzicht()
+		{
 			$result = $this->db->select("SELECT * FROM cursussen WHERE MONTH(startdatum) = MONTH(CURDATE())");
 			return $result;			
 		}
@@ -116,6 +118,14 @@
 		{
 			$result = $this->db->select("SELECT * FROM cursussen INNER JOIN inschrijvingen ON cursussen.cursus_id = inschrijvingen.cursus_id WHERE inschrijvingen.klant_id = $id ORDER BY cursussen.startdatum ASC");
 			
+			return $result;
+		}
+
+		public function getCursusWithCustomers(){
+			//SELECT COUNT(column_name) FROM table_name;
+			$qry = "SELECT cursus_id, cursusnaam, startdatum, niveau, (SELECT Count(*) FROM inschrijvingen WHERE inschrijvingen.cursus_id = cursussen.cursus_id) as inschrijvingen FROM cursussen ORDER BY startdatum";
+			$result = $this->db->select($qry);
+
 			return $result;
 		}
 	}
