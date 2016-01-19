@@ -46,4 +46,12 @@ class Home extends Controller
         View::render('home/overons', $data);
         View::renderTemplate('footer', $data);
     }
+
+    public function developers(){
+        $data['title'] = $this->language->get('Developerteam');
+
+        View::renderTemplate('header', $data);
+        View::render('home/developers', $data);
+        View::renderTemplate('footer', $data);
+    }
 }

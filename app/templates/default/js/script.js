@@ -96,7 +96,7 @@ $("#Comments").keyup(function() {
 });
 
 // AJAX api om gebruikers in te schrijven in een cursus
-$('#x').submit(function (e) {
+$('#CursusForm').submit(function (e) {
     // zorgt ervoor dat het formulier niet submit
     e.preventDefault();
 
@@ -106,7 +106,6 @@ $('#x').submit(function (e) {
     //Stuurt data naar de api
     $.post( "/zeilschooldewaai/app/api/cursussen.php?action=1", $('form').serialize())
         .done(function( data ) {
-            console.log('==== Data =====');
 
             // als de voorwaarden nog niet geaccepteerd zijn
             if(data == 'voorwaarden niet geaccepteerd'){
@@ -126,6 +125,7 @@ $('#x').submit(function (e) {
 
             // als de inschrijving door de validatie heen is, vervolgd de procedure
             }else{
+                
                 // navigatie naar laatste stap
                 $(".Subject").slideUp( "500", function() {  });
                 $("#stap3_inschrijven").slideDown( "500", function() {  });

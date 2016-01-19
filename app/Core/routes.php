@@ -16,6 +16,7 @@ Router::any('', 'Controllers\Home@index');
 Router::any('home', 'Controllers\Home@index');
 Router::any('overons', 'Controllers\Home@overons');
 Router::any('contact', 'Controllers\Contact@index');
+Router::any('developers', 'Controllers\Home@developers');
 
 /* Boten sectie */
 Router::any('boten', 'Controllers\Boten@index');
