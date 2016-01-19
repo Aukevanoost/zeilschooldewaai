@@ -7,6 +7,10 @@
     
 }
 
+.developer-tile{
+	border-radius: 2px;
+}
+
 .deleteCursus{
 	outline: 0;
 	background:none;

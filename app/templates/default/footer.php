@@ -29,7 +29,8 @@ $hooks = Hooks::get();
 			<div class="col-md-4">
 				<img src="/zeilschooldewaai/app/templates/default/img/logo.png" id="Logo" style="display:inline;"/><br>
 				&copy; <?php echo date('Y'); ?> Zeilschool de Waai.<br>
-				Alle rechten voorbehouden.
+				Alle rechten voorbehouden.<br />
+				<a href="developers">Developerteam</a>
 			</div>
 			<div class="col-md-4">
 				<h2>Contact opnemen</h2><hr>
@@ -52,6 +53,7 @@ Assets::js(array(
 	'https://www.google.com/recaptcha/api.js',
 	'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
 	Url::templatePath() . 'js/script.js',
+	Url::templatePath() . 'js/cursistkoppelen.js',
 	Url::templatePath() . 'js/validation.js'
 
 ));
