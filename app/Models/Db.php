@@ -118,4 +118,13 @@
 			
 			return $result;
 		}
+
+		public function getCursusWithCustomers(){
+			//SELECT COUNT(column_name) FROM table_name;
+			$qry = "SELECT cursus_id, cursusnaam, startdatum, niveau, (SELECT Count(*) FROM inschrijvingen WHERE inschrijvingen.cursus_id = cursussen.cursus_id) as inschrijvingen FROM cursussen ORDER BY startdatum";
+			$result = $this->db->select($qry);
+
+			return $result;
+		}
+
 	}

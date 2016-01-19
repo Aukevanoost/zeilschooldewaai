@@ -34,6 +34,7 @@ class beheerCursussen extends Controller
         return $ret;
     }
 
+
     public function index()
     {
         $data['title'] = $this->language->get('beheerCursussen');
