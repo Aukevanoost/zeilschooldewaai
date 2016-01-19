@@ -544,11 +544,12 @@ $('#CursusForm').submit(function (e) {
 /* Boten 
  ================================================================================== */
 $("#boot_id").click(function(){
-console.log('data');
-    // gegevens verzamelen
-    var items = [ "bootnaam", "bouwjaar", "type_id"];
-    var body = '';
 
+    // gegevens verzamelen
+    var items = [ "bootnaam", "bouwjaar"];
+    var body = '';
+    //select boot typen
+        body += '<tr><th>Typen: </th><td><select name="typen" class="form-control" title="Voer typen in.."><option value="1">Draken</option><option value="2">BMers</option><option value="3">Schouwen</option></select></td></tr>';
     // loop door de gegevens die ingevoerd moeten worden
     for (var i = 0; i < items.length; i++) {
         body += '<tr><th>' + items[i] + '</th><td><input type="text" name="' + items[i] + '" class="form-control" placeholder="Voer ' + items[i] + ' in.." required/></td></tr>';
@@ -558,7 +559,7 @@ console.log('data');
     $("#BootModalHeader").html('Boten toevoegen');
     $("#BootModalBody").html(body);
     $('#SaveBtn').attr('data-action','1');
-
+console.log('data');
     // modal laten zien
     $('#BootModal').modal('show');
     
@@ -585,7 +586,8 @@ console.log('data');
             data = data[0];
 
             // input velden genereren
-            body = '<tr><th>Id:</th><td><input type="hidden" name="boot_id" value="' + id + '" />' + id + '</td></tr>';
+            
+            body = '<tr><th>Id:</th><td><input type="hidden" name="boot_id" value="' + id + '" />' + id + '</td></tr><tr><th>Boottype: </th><td><select name="Boottype" class="form-control" title="Voer typen in.."><option value="1">Draken</option><option value="2">BMers</option><option value="3">Schouwen</option></select></td></tr>';
             $.each(data, function(key, value){
                 body += '<tr><th>' + key + ':</th><td><input type="text" name="' + key + '" value="' + value + '" class="form-control" placeholder="Voer ' + key + ' in.."/></td></tr>';
             });
@@ -603,9 +605,9 @@ console.log('data');
     });
 });
 
-/* Cursus verwijderen */
-$(".boten_idDeleteRow").on('click', function(){
-    var cursus_id = $(this).attr('data-id');
+/* Boot verwijderen */
+$(".boot_idDeleteRow").on('click', function(){
+    var boot_id = $(this).attr('data-id');
     
     body = '<input type="hidden" name="boot_id" value="' + boot_id + '" /> Weet u zeker dat u deze boot wil verwijderen?';
 

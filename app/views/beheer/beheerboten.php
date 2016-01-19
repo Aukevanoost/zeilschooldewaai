@@ -14,7 +14,7 @@ use Core\Language;
                 ?>
 
 
-        <div class="modal fade" tabindex="-1" role="dialog" id="AdminModal" style="z-index: 99999999999999999999">
+        <div class="modal fade" tabindex="-1" role="dialog" id="BootModal" style="z-index: 99999999999999999999">
             <form  action="" method="post" id="BootForm">
                 <div class="modal-dialog">
                     <div class="modal-content">
