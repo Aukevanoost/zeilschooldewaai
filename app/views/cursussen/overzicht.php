@@ -247,7 +247,7 @@
             <span id="CountDown">250</span>
             <br />
             <input type="checkbox" alt="Ik accepteer de voorwaarden" id="voorwaarden" name="voorwaarden" />
-            <label id="voorwaardenLabel" for="voorwaarden" style="font-weight: normal;">Ik ga  akkoord met de voorwaarden.</label><br />
+            <label id="voorwaardenLabel" for="voorwaarden" style="font-weight: normal;">Ik ga  akkoord met de <a target="_blank" href="voorwaarden">voorwaarden.</a></label><br />
             <input type="submit" class="btn btn-primary" id="VerstuurKnop" name="Verstuur" value="Inschrijven"/>
         </div>
         <div class="spacer" style="clear: both"></div>

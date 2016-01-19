@@ -1,32 +1,13 @@
 <?php
-/**
- * Sample layout
- */
 use Core\Language;
-
-
+                    
 	?>
     <div class="page-header">
-        <h1 style="text-align: center">Beheer</h1>
+        <h1 style="text-align: center"><?= $data['title'] ?></h1>
     </div>
-        <table class="table table-hover">
-            <button id="BeheerderToevoegen" class="btn btn-primary">Toevoegen</button>
-            <thead>
-                <tr>
-                    <th width="40px">#</th>
-                    <th width="100px">Voornaam</th>
-                    <th width="70px"></th>
-                    <th>Achternaam</th>
-                    <th>E-mail</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
                 <?php
                     echo $data["users"];
                 ?>
-            </tbody>
-        </table>
 
 
         <div class="modal fade" tabindex="-1" role="dialog" id="AdminModal" style="z-index: 99999999999999999999">
@@ -51,4 +32,3 @@ use Core\Language;
             </form>
         </div>
     </div>
-

@@ -14,7 +14,7 @@ use Core\Error;
 
 			<hr />
 
-			<p>De pagina die jij wou bezoeken bestaat niet meer of is verplaatst. <a href="/zeilschooldewaai">Klik hier</a> om terug te gaan naar de home pagina.</p>
+			<p>De pagina die u wou bezoeken bestaat niet meer of is verplaatst. <a href="/zeilschooldewaai">Klik hier</a> om terug te gaan naar de home pagina.</p>
 
 		</div>
 	</div>

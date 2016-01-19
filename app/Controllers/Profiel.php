@@ -28,7 +28,6 @@ class Profiel extends Controller
     // De zichtbare pagina voor Profiel
     public function index()
     {
-
         $data['title'] = "Profiel";
         $id = \Helpers\Session::get('id');
 
@@ -37,6 +36,7 @@ class Profiel extends Controller
             $cursus_id = $_POST['cursus_id'];
             $query = array('klant_id' => $id, 'cursus_id' => $cursus_id);
             $this->profiel->deleteData("inschrijvingen", $query);
+            
             // Melding dat hij is uitgeschreven.
             $data["melding"] = '<div class="alert alert-success alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Gelukt!</strong><br>U bent uitgeschreven op de cursus.</div>';
         }

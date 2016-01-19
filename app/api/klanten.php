@@ -6,7 +6,7 @@
         echo 'could not connect to db';
     }
 
-    /* Beheerder toevoegen
+    /* Klant toevoegen
     ================================================================================== */
     if($_GET['action'] == '1') {
         echo json_encode($_POST);
@@ -29,7 +29,7 @@
         echo(json_encode($results));
     }
 
-    /* Beheerder wijzigen
+    /* Klant wijzigen
     ================================================================================== */
     if($_GET['action'] == '3') {
         if($_POST['wachtwoord'] != ''){
@@ -41,7 +41,7 @@
 
     }
 
-    /* Beheerder verwijderen
+    /* Klant verwijderen
     ================================================================================== */
     if($_GET['action'] == '4') {
 

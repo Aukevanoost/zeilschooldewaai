@@ -7,27 +7,11 @@ use Core\Language;
 
 ?>
 <div class="page-header">
-    <h1 style="text-align: center">Beheer</h1>
+    <h1 style="text-align: center"><?= $data['title'] ?></h1>
 </div>
-<table class="table table-hover">
-    <button id="InstructeurToevoegen" class="btn btn-primary">Toevoegen</button>
-    <thead>
-    <tr>
-        <th width="40px">#</th>
-        <th width="100px">voornaam</th>
-        <th width="100px">Voorletters</th>
-        <th width="70px"></th>
-        <th>Achternaam</th>
-        <th>Geslacht</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
     <?php
     echo $data["instructeurs"];
     ?>
-    </tbody>
-</table>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="InstructeurModal" style="z-index: 99999999">
     <form  action="" method="post" id="InstructeurForm">
