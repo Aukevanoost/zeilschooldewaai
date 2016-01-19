@@ -17,7 +17,7 @@ class cursistKoppelen extends Controller
 
     public function index()
     {
-        $data['title'] = $this->language->get('Koppelcursisten');
+        $data['title'] = $this->language->get('cursisten koppelen');
 
         $rechten = \Helpers\Session::get('rechten') - 1;
         $result = $this->Db->getCursusWithCustomers();

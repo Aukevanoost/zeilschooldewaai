@@ -28,7 +28,7 @@ class Beheer extends Controller
             }
             else
             {
-                $thead .= "<th>$key</th>";
+                $thead .= str_replace("instructeur_","","<th>$key</th>");
                 $tableNames[$i] = $key;  
             }
             $i++;
@@ -81,8 +81,6 @@ class Beheer extends Controller
     public function beheer()
     {
         $this->checkValidation(3);
-        
-        $data['title'] = $this->language->get('beheer');
 
         $rechten = \Helpers\Session::get('rechten') - 1;
 
@@ -101,7 +99,7 @@ class Beheer extends Controller
         $data['title'] = $this->language->get('beheer instructeurs');
 
         $data["instructeurs"] .= $this->getTable("SELECT * FROM `instructeurs`", "instructeur_id");
-        
+
         View::renderTemplate('header', $data);
         View::render('beheer/instructeur', $data);
         View::renderTemplate('footer', $data);
@@ -125,6 +123,7 @@ class Beheer extends Controller
     public function beheerCursussen()
     {
         $this->checkValidation(2);
+
 
         $data['title'] = $this->language->get('beheer cursussen');
 
