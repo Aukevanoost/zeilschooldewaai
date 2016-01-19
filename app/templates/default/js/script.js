@@ -96,7 +96,7 @@ $("#Comments").keyup(function() {
 });
 
 // AJAX api om gebruikers in te schrijven in een cursus
-$('#CursusForm').submit(function (e) {
+$('#x').submit(function (e) {
     // zorgt ervoor dat het formulier niet submit
     e.preventDefault();
 
@@ -399,10 +399,12 @@ $(".instructeur_idEditRow").click(function() {
                     body += '<tr><th style="text-transform:capitalize;">' + key.replace("instructeur_", "") + ':</th><td><input type="text" name="' + key.replace("instructeur_", "") + '" value="' + value + '" class="form-control" placeholder="Voer ' + key.replace("instructeur_", "") + ' in.."/></td></tr>';
                 }
             });
+
             // modal vullen met gegevens
             $("#InstructeurModalHeader").html('Beheerder wijzigen');
             $("#InstructeurModalBody").html(body);
             $('#SaveBtn').attr('data-action','3');
+
             // modal laten zien*/
             $('#InstructeurModal').modal('show');
         }
@@ -429,7 +431,7 @@ $('#InstructeurForm').submit(function (e) {
     // send dem data to validation
     $.post( "/zeilschooldewaai/app/api/instructeurs.php?action=" + action, $('form').serialize())
         .done(function( data ) {
+            console.log(data);
             location.reload();
         });
 });
-
