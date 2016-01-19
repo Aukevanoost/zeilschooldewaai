@@ -64,21 +64,41 @@ class Beheer extends Controller
         return $ret;
     }
 
+    public function checkValidation($needed)
+    {
+        if (\Helpers\Session::get('rechten')==$needed) 
+        {
+            return true;
+        }
+        else
+        {
+            View::renderTemplate('header', $data);
+            View::render('error/403', $data);
+            View::renderTemplate('footer', $data);
+        }
+    }
+
     public function beheer()
     {
-        $data['title'] = $this->language->get('Beheer');
+        $this->checkValidation(3);
+        
+        $data['title'] = $this->language->get('beheer');
 
         $rechten = \Helpers\Session::get('rechten') - 1;
 
         $data["users"] .= $this->getTable("SELECT klant_id, voornaam, tussenvoegsel, achternaam, email FROM `klanten` WHERE priviledged =".$rechten, "klant_id");
         
+    
         View::renderTemplate('header', $data);
         View::render('beheer/beheer', $data);
         View::renderTemplate('footer', $data);
     }
 
-    public function instructeur(){
-        $data['title'] = $this->language->get('Instructeurbeheer');
+    public function instructeur()
+    {
+        $this->checkValidation(2);
+
+        $data['title'] = $this->language->get('beheer instructeurs');
 
         $data["instructeurs"] .= $this->getTable("SELECT * FROM `instructeurs`", "instructeur_id");
         
@@ -89,8 +109,17 @@ class Beheer extends Controller
 
     public function beheerBoten()
     {
+<<<<<<< HEAD
         $data["boten"] = $this->getTable("SELECT boot_id, bootnaam, bouwjaar, `typen`.boottype FROM `boten` JOIN `typen` ON `boten`.`type_id`=`typen`.`type_id`", "boot_id");
 
+=======
+        $this->checkValidation(2);
+
+        $data['title'] = $this->language->get('beheer boten');
+
+        $data["boten"] = $this->getTable("SELECT bootnaam, bouwjaar, `typen`.boottype FROM `boten` JOIN `typen` ON `boten`.`type_id`=`typen`.`type_id`", "boot_id");
+
+>>>>>>> origin/master
         View::renderTemplate('header', $data);
         View::render('beheer/beheerboten', $data);
         View::renderTemplate('footer', $data);
@@ -98,7 +127,9 @@ class Beheer extends Controller
     
     public function beheerCursussen()
     {
-        $data['title'] = $this->language->get('beheerCursussen');
+        $this->checkValidation(2);
+
+        $data['title'] = $this->language->get('beheer cursussen');
 
         $data['cursussen'] = $this->getTable("SELECT cursus_id, cursusnaam, cursusprijs, cursusomschrijving, startdatum, einddatum FROM `cursussen`", "cursus_id");
 
@@ -109,6 +140,8 @@ class Beheer extends Controller
 
     public function beheerKlanten()
     {
+        $this->checkValidation(2);
+
         $data['title'] = $this->language->get('beheer klanten');
 
         $rechten = \Helpers\Session::get('rechten') - 1;

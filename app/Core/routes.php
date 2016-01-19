@@ -15,6 +15,7 @@ use Helpers\Hooks;
 Router::any('', 'Controllers\Home@index');
 Router::any('home', 'Controllers\Home@index');
 Router::any('overons', 'Controllers\Home@overons');
+Router::any('voorwaarden', 'Controllers\Voorwaarden@index');
 Router::any('contact', 'Controllers\Contact@index');
 
 /* Boten sectie */

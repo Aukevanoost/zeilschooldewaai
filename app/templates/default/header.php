@@ -75,7 +75,7 @@ $hooks->run('afterBody');
 		      <!-- Admin menu -->
               <?php } elseif (\Helpers\Session::get('rechten')==3 ) { ?>
          <div class="Left">
-              <a href="beheer"><div class="NavItem <?php if($data['title'] == 'Beheer'){echo 'active';} ?>">Beheer</div></a>            
+              <a href="beheer"><div class="NavItem <?php if($data['title'] == 'beheer'){echo 'active';} ?>">Beheer</div></a>            
         </div>
         
 			<!-- Normale menu items.-->
@@ -123,13 +123,44 @@ $hooks->run('afterBody');
 		<div id="ResponsiveTrigger"></div>
 	</div>
 	<div class="responsiveMenu">
-		<a href="home"><div class="ResponsiveItem">Home</div></a>
-		<a href="overons"><div class="ResponsiveItem">Over ons</div></a>
-		<a href="boten"><div class="ResponsiveItem">Boten</div></a>
-		<a href="cursussen"><div class="ResponsiveItem">Cursussen</div></a>
-		<a href="contact"><div class="ResponsiveItem">contact</div></a>
-		<a href="login"><div class="ResponsiveItem">Inloggen</div></a>
-		<a href="registreren"><div class="ResponsiveItem">Registreren</div></a>
+	<?php
+		if (\Helpers\Session::get('rechten')==2) { ?>
+			<a href="beheerklanten"><div class="ResponsiveItem">Beheer Klanten</div></a>
+			<a href="beheerboten"><div class="ResponsiveItem">Beheer Boten</div></a>
+			<a href="beheercursussen"><div class="ResponsiveItem">Beheer Cursussen</div></a>
+			<a href="beheerinstructeurs"><div class="ResponsiveItem">Beheer Instructeurs</div></a>
+			<a href="cursistkoppelen"><div class="ResponsiveItem">Cursist Koppelen</div></a>
+		<?php }elseif (\Helpers\Session::get('rechten')==3 ) { ?>
+			<a href="beheer"><div class="ResponsiveItem">Beheer</div></a> 
+		<?php } else { ?>
+			<a href="home"><div class="ResponsiveItem">Home</div></a>
+			<a href="overons"><div class="ResponsiveItem">Over ons</div></a>
+			<a href="boten"><div class="ResponsiveItem">Boten</div></a>
+			<a href="cursussen"><div class="ResponsiveItem">Cursussen</div></a>
+			<a href="contact"><div class="ResponsiveItem">contact</div></a>
+		<?php } ?>
+
+		<?php
+		//Andere menu item als er een login geset is.
+		if (\Helpers\Session::get('id')) {
+			?>
+			<a href="loguit"><div class="ResponsiveItem">Uitloggen</div></a>
+			<?php
+				if (\Helpers\Session::get('rechten')==1) {
+			?>
+			<a href="profiel"><div class="ResponsiveItem">Profiel</div></a>
+			<?php
+				}
+		}
+		//Normale menu items.
+		else{ ?>
+			<a href="login"><div class="ResponsiveItem">Ik ben al klant</div></a>
+			<a href="registreren"><div class="ResponsiveItem">Klant worden</div></a>
+
+			<?php 
+
+			} ?>
+
 
 	</div>
 </div>
