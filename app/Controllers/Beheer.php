@@ -109,12 +109,17 @@ class Beheer extends Controller
 
     public function beheerBoten()
     {
+<<<<<<< HEAD
+        $data["boten"] = $this->getTable("SELECT boot_id, bootnaam, bouwjaar, `typen`.boottype FROM `boten` JOIN `typen` ON `boten`.`type_id`=`typen`.`type_id`", "boot_id");
+
+=======
         $this->checkValidation(2);
 
         $data['title'] = $this->language->get('beheer boten');
 
         $data["boten"] = $this->getTable("SELECT bootnaam, bouwjaar, `typen`.boottype FROM `boten` JOIN `typen` ON `boten`.`type_id`=`typen`.`type_id`", "boot_id");
 
+>>>>>>> origin/master
         View::renderTemplate('header', $data);
         View::render('beheer/beheerboten', $data);
         View::renderTemplate('footer', $data);

@@ -12,7 +12,7 @@
 
         $qry = "INSERT INTO `cursussen` (`cursus_id`, `cursusnaam`, `cursusprijs`, `cursusomschrijving`, `startdatum`, `einddatum`, `niveau`, `type_id`) VALUES (NULL, '".$_POST['cursusnaam']."', '".$_POST['cursusprijs']."', '".$_POST['cursusomschrijving']."', '".$_POST['startdatum']."', '".$_POST['einddatum']."', '".$_POST['niveau']."', '".$_POST['type_id']."');";
         $rslt = mysqli_query($link, $qry);
-        print_r(mysqli_error($link));
+        
     }
 
     /* Cursusgegevens ophalen op basis van id
