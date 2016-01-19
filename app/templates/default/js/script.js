@@ -431,7 +431,7 @@ $('#InstructeurForm').submit(function (e) {
     // send dem data to validation
     $.post( "/zeilschooldewaai/app/api/instructeurs.php?action=" + action, $('form').serialize())
         .done(function( data ) {
+            console.log(data);
             location.reload();
         });
 });
-
