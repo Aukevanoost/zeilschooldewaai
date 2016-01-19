@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffb9956d-68e8-4b45-823f-29ea06bedff2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controllers/Beheer.php" afterPath="$PROJECT_DIR$/app/Controllers/Beheer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controllers/cursistKoppelen.php" afterPath="$PROJECT_DIR$/app/Controllers/cursistKoppelen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/beheer/cursistkoppelen.php" afterPath="$PROJECT_DIR$/app/views/beheer/cursistkoppelen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/default/header.php" afterPath="$PROJECT_DIR$/app/templates/default/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Core/routes.php" afterPath="$PROJECT_DIR$/app/Core/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/default/js/script.js" afterPath="$PROJECT_DIR$/app/templates/default/js/script.js" />
     </list>
     <ignored path="zeilschooldewaai.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,12 +91,12 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/templates/default/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5025445">
-              <caret line="226" column="4" selection-start-line="226" selection-start-column="4" selection-end-line="226" selection-end-column="4" />
+            <state vertical-scroll-proportion="-0.17302799">
+              <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
               <folding>
-                <marker date="1453191913475" expanded="true" signature="14066:14092" placeholder="..." />
-                <marker date="1453191913475" expanded="true" signature="14452:14478" placeholder="..." />
-                <marker date="1453191913475" expanded="true" signature="14852:14878" placeholder="..." />
+                <marker date="1453198050845" expanded="true" signature="14057:14083" placeholder="..." />
+                <marker date="1453198050845" expanded="true" signature="14443:14469" placeholder="..." />
+                <marker date="1453198050845" expanded="true" signature="14843:14869" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -164,7 +160,6 @@
         <option value="$PROJECT_DIR$/app/Controllers/beheerCursussen.php" />
         <option value="$PROJECT_DIR$/app/Models/Db.php" />
         <option value="$PROJECT_DIR$/app/templates/default/footer.php" />
-        <option value="$PROJECT_DIR$/app/templates/default/js/script.js" />
         <option value="$PROJECT_DIR$/app/templates/default/js/cursistkoppelen.js" />
         <option value="$PROJECT_DIR$/app/api/koppelen.php" />
         <option value="$PROJECT_DIR$/app/views/beheer/beheerklanten.php" />
@@ -173,6 +168,7 @@
         <option value="$PROJECT_DIR$/app/Controllers/cursistKoppelen.php" />
         <option value="$PROJECT_DIR$/app/templates/default/header.php" />
         <option value="$PROJECT_DIR$/app/Controllers/Beheer.php" />
+        <option value="$PROJECT_DIR$/app/templates/default/js/script.js" />
       </list>
     </option>
   </component>
@@ -337,42 +333,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zeilschooldewaai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zeilschooldewaai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zeilschooldewaai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zeilschooldewaai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -435,10 +395,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -867,12 +827,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/default/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5025445">
-          <caret line="226" column="4" selection-start-line="226" selection-start-column="4" selection-end-line="226" selection-end-column="4" />
+        <state vertical-scroll-proportion="-0.17302799">
+          <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
           <folding>
-            <marker date="1453191913475" expanded="true" signature="14066:14092" placeholder="..." />
-            <marker date="1453191913475" expanded="true" signature="14452:14478" placeholder="..." />
-            <marker date="1453191913475" expanded="true" signature="14852:14878" placeholder="..." />
+            <marker date="1453198050845" expanded="true" signature="14057:14083" placeholder="..." />
+            <marker date="1453198050845" expanded="true" signature="14443:14469" placeholder="..." />
+            <marker date="1453198050845" expanded="true" signature="14843:14869" placeholder="..." />
           </folding>
         </state>
       </provider>
