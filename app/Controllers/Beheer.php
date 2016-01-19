@@ -148,10 +148,83 @@ class Beheer extends Controller
         View::renderTemplate('footer', $data);
     }
 
+    public function createPdf($query)
+    {
+        $this->checkValidation(2);
+
+        //http://www.fpdf.org/
+
+        $qry = "SELECT c.klant_id, cu.cursusnaam, k.cursus_id, b.boot_id, c.voorletters, c.tussenvoegsel, c.achternaam, b.bootnaam, i.instructeur_voorletters, i.instructeur_tussenvoegsels, i.instructeur_achternaam FROM koppelinggen k JOIN klanten c ON k.klant_id = c.klant_id JOIN boten b ON k.boot_id = b.boot_id JOIN instructeurs i ON i.instructeur_id = k.instructeur_id JOIN cursussen cu ON cu.cursus_id = k.cursus_id WHERE k.cursus_id =".$query;
+        $result = $this->dbBeheer->getAllData($qry);
+        $pdf = new \Models\FPDF();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','',12);
+        $pdf->Image('http://localhost/zeilschooldewaai/app/templates/default/img/logo.png',160,10,-200);
+
+        $i=0;
+        foreach ($result as $key) {
+            $string = $key->voorletters." ".$key->tussenvoegsel." ".$key->achternaam."";
+            if ($i==0) {
+                $pdf->SetFont('Arial','B',15);
+                $pdf->Cell(40,5, $key->cursusnaam);
+                $pdf->Ln(6);
+                $pdf->SetFont('Arial','',12);
+                $pdf->Cell(40,5, "Dit zijn de aangemelde cursisten");
+                $pdf->Ln(10);
+            }
+            $pdf->Cell(40,5, $string);
+            $pdf->Ln();
+            $i++;
+        }
+        
+        $pdf->Output();
+        
+        View::renderTemplate('header', $data);
+        View::render('beheer/createpdf', $data);
+        View::renderTemplate('footer', $data);
+    }
+
     public function cursistKoppelen()
     {
+        $this->checkValidation(2);
+        
+        $data['title'] = $this->language->get('cursisten koppelen');
+
+        $rechten = \Helpers\Session::get('rechten') - 1;
+        $result = $this->dbBeheer->getCursusWithCustomers();
+        //
+        $i = 1;
+        foreach ($result as $key) {
+            if($key->inschrijvingen == 0){
+                $key->inschrijvingen = '<b style="color: #b20000">'.$key->inschrijvingen.'</b>';
+            }else{
+                $key->inschrijvingen = '<b style="color: #458B00">'.$key->inschrijvingen.'</b>';
+            }
+            switch ($key->niveau) {
+                case 1: $key->niveau = "Beginner";    break;
+                case 2: $key->niveau = "Ervaren";     break;
+                case 3: $key->niveau = "Wadtocht";    break;
+            }
+
+            $data["cursussen"] .= '
+                <tr>
+                    <td>' . $i . '</td>
+                    <td>' . $key->cursusnaam . '</td>
+                    <td><b>' . date("d / m / Y",strtotime($key->startdatum)) . '</b></td>
+                    <td>' . $key->niveau . '</td>
+                    <td>' . $key->inschrijvingen . ' Cursist(en)</td>
+                    <td style="text-align: right">
+                        <a href="#" data-id="' . $key->cursus_id . '" class="BekijkKoppelingen"><i class="fa fa-link fa-lg"></i></a>&nbsp;
+                        <a href="#" data-id="' . $key->cursus_id . '" class="KoppelRij"><i class="fa fa-anchor fa-lg"></i></a>&nbsp;
+                        <a href="createpdf/' . $key->cursus_id . '" target="_blank" data-id="' . $key->cursus_id . '" class="DownloadCursus"><i class="fa fa-download fa-lg"></i></a>
+                    </td>
+                </tr>
+            ';
+            $i++;
+        }
+
         View::renderTemplate('header', $data);
-        View::render('beheer/cursistKoppelen', $data);
+        View::render('beheer/cursistkoppelen', $data);
         View::renderTemplate('footer', $data);
     } 
 }

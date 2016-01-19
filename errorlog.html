@@ -1387,3 +1387,103 @@
            <hr />
 <p>Error on Jan 14, 2016 14:18PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 23</p><p>Error on Jan 14, 2016 14:19PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 24</p><p>Error on Jan 14, 2016 14:19PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\beheerCursussen.php on line 24</p>
 >>>>>>> origin/master
+<p>Error on Jan 19, 2016 11:44AM - call_user_func_array() expects parameter 1 to be a valid callback, class 'Controllers\Beheer' does not have a method 'index' in C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php on line 126</p><p>Error on Jan 19, 2016 11:48AM - require(fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:49AM - require(/Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:49AM - require(/Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:49AM - require(/Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:49AM - require(../Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:49AM - require(../Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:49AM - require(../Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:49AM - require(../Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:50AM - require(Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:50AM - require(Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:50AM - require(Models/fpdf181/fpdf.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php on line 154</p><p>Error on Jan 19, 2016 11:54AM - call_user_func_array() expects parameter 1 to be a valid callback, class 'Controllers\Beheer' does not have a method 'index' in C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php on line 126</p><p>Error on Jan 19, 2016 12:07PM - strpos() expects parameter 1 to be string, object given in C:\xampp\htdocs\zeilschooldewaai\app\Models\FPDF.php on line 1216</p><h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Jan 19, 2016 12:14PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cursistkoppelen' in 'where clause'</p>
+
+           <p><strong>Code:</strong> 42S22</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 104</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php(104): PDOStatement->execute()
+#1 C:\xampp\htdocs\zeilschooldewaai\app\Models\Db.php(110): Helpers\Database->select('SELECT c.klant_...')
+#2 C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php(155): Models\Db->getAllData('SELECT c.klant_...')
+#3 [internal function]: Controllers\Beheer->createPdf('cursistkoppelen')
+#4 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(126): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(254): Core\Router::invokeObject('Controllers\\Beh...', Array)
+#6 C:\xampp\htdocs\zeilschooldewaai\app\Core\routes.php(55): Core\Router::dispatch()
+#7 C:\xampp\htdocs\zeilschooldewaai\index.php(81): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Jan 19, 2016 12:14PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cursistkoppelen' in 'where clause'</p>
+
+           <p><strong>Code:</strong> 42S22</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 104</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php(104): PDOStatement->execute()
+#1 C:\xampp\htdocs\zeilschooldewaai\app\Models\Db.php(110): Helpers\Database->select('SELECT c.klant_...')
+#2 C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php(155): Models\Db->getAllData('SELECT c.klant_...')
+#3 [internal function]: Controllers\Beheer->createPdf('cursistkoppelen')
+#4 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(126): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(254): Core\Router::invokeObject('Controllers\\Beh...', Array)
+#6 C:\xampp\htdocs\zeilschooldewaai\app\Core\routes.php(55): Core\Router::dispatch()
+#7 C:\xampp\htdocs\zeilschooldewaai\index.php(81): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Jan 19, 2016 12:15PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cursistkoppelen' in 'where clause'</p>
+
+           <p><strong>Code:</strong> 42S22</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 104</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php(104): PDOStatement->execute()
+#1 C:\xampp\htdocs\zeilschooldewaai\app\Models\Db.php(110): Helpers\Database->select('SELECT c.klant_...')
+#2 C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php(155): Models\Db->getAllData('SELECT c.klant_...')
+#3 [internal function]: Controllers\Beheer->createPdf('cursistkoppelen')
+#4 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(126): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(254): Core\Router::invokeObject('Controllers\\Beh...', Array)
+#6 C:\xampp\htdocs\zeilschooldewaai\app\Core\routes.php(55): Core\Router::dispatch()
+#7 C:\xampp\htdocs\zeilschooldewaai\index.php(81): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
+<p>Error on Jan 19, 2016 12:22PM - include(C:\xampp\htdocs\zeilschooldewaai\app\Models/font/helvetica12.php): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Models\FPDF.php on line 1145</p><p>Error on Jan 19, 2016 12:24PM - fopen(/zeilschooldewaai/app/templates/default/img/Logo.png): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Models\FPDF.php on line 1261</p><p>Error on Jan 19, 2016 12:24PM - fopen(/zeilschooldewaai/app/templates/default/img/logo.png): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Models\FPDF.php on line 1261</p><p>Error on Jan 19, 2016 12:25PM - fopen(/templates/default/img/logo.png): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Models\FPDF.php on line 1261</p><p>Error on Jan 19, 2016 12:25PM - fopen(localhost/zeilschooldewaai/app/templates/default/img/logo.png): failed to open stream: No such file or directory in C:\xampp\htdocs\zeilschooldewaai\app\Models\FPDF.php on line 1261</p><h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Jan 19, 2016 12:36PM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php</p>
+
+           <p><strong>Line:</strong> 104</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 C:\xampp\htdocs\zeilschooldewaai\app\Helpers\Database.php(104): PDOStatement->execute()
+#1 C:\xampp\htdocs\zeilschooldewaai\app\Models\Db.php(110): Helpers\Database->select('SELECT c.klant_...')
+#2 C:\xampp\htdocs\zeilschooldewaai\app\Controllers\Beheer.php(155): Models\Db->getAllData('SELECT c.klant_...')
+#3 [internal function]: Controllers\Beheer->createPdf('3%20data-id=')
+#4 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(126): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\zeilschooldewaai\app\Core\Router.php(254): Core\Router::invokeObject('Controllers\\Beh...', Array)
+#6 C:\xampp\htdocs\zeilschooldewaai\app\Core\routes.php(55): Core\Router::dispatch()
+#7 C:\xampp\htdocs\zeilschooldewaai\index.php(81): require('C:\\xampp\\htdocs...')
+#8 {main}</pre>
+
+           <hr />
