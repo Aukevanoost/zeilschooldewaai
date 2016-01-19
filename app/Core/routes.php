@@ -38,7 +38,7 @@ Router::any('beheercursussen', 'Controllers\beheerCursussen@index');
 Router::any('beheerklanten', 'Controllers\beheerKlanten@index');
 //Router::any('beheerboten', 'Controllers\beheerBoten@index');
 Router::any('beheerinstructeurs', 'Controllers\Beheer@instructeur');
-//Router::any('cursistkoppelen', 'Controllers\cursistKoppelen@index');
+Router::any('cursistkoppelen', 'Controllers\cursistKoppelen@index');
 
 
 /** Module routes. */

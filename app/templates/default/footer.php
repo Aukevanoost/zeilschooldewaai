@@ -52,6 +52,7 @@ Assets::js(array(
 	'https://www.google.com/recaptcha/api.js',
 	'//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
 	Url::templatePath() . 'js/script.js',
+	Url::templatePath() . 'js/cursistkoppelen.js',
 	Url::templatePath() . 'js/validation.js'
 
 ));
