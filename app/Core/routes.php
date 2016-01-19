@@ -39,7 +39,8 @@ Router::any('beheercursussen', 'Controllers\beheer@beheerCursussen');
 Router::any('beheerklanten', 'Controllers\beheer@beheerKlanten');
 Router::any('beheerboten', 'Controllers\beheer@beheerBoten');
 Router::any('beheerinstructeurs', 'Controllers\Beheer@instructeur');
-Router::any('cursistkoppelen', 'Controllers\cursistKoppelen@index');
+Router::any('cursistkoppelen', 'Controllers\beheer@cursistKoppelen');
+Router::any('createpdf/(:num)', 'Controllers\beheer@createPdf');
 
 
 /** Module routes. */
